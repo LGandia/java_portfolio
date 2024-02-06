@@ -9,7 +9,11 @@ public class StudentGrades {
         System.out.println("----           ---     -----   -----");
 
         final Object[][] grades = new String[5][];
-        grades[0] = new String[] {"Walt", "50", "7","57"};
+        grades[0] = new String[] {"Walt", "70", "7","77"};
+        grades[1] = new String[] {"Jesse", "25", "3","28"};
+        grades[2] = new String[] {"Gus", "70", "30","100"};
+        grades[3] = new String[] {"Mike", "40", "10","50"};
+        grades[4] = new String[] {"Hank", "50", "7","57"};
 
         for (final Object[] row : grades){
             System.out.format("%-15s%-9s%-8s%-9s%n", row);
