@@ -8,6 +8,7 @@ public class StudentGrades {
         System.out.println("\nName           Lab     Bonus   Total");
         System.out.println("----           ---     -----   -----");
 
+        //https://stackoverflow.com/questions/18672643/how-to-print-a-table-of-information-in-java
         final Object[][] grades = new String[5][];
         grades[0] = new String[] {"Walt", "70", "7","77"};
         grades[1] = new String[] {"Jesse", "25", "3","28"};
