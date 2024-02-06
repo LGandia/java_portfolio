@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class SquareCalculations
+public class Fraction
 {
     public static void main(String[] args) {
         int side, perimeter, area;
@@ -13,5 +13,5 @@ public class SquareCalculations
         perimeter = side * 4;
         area = side*side;
         System.out.println("The perimeter of the square is "+perimeter+" and the area is "+area);
-    }
+    }{
 }
