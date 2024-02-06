@@ -3,15 +3,17 @@ import java.util.Scanner;
 public class Fraction
 {
     public static void main(String[] args) {
-        int side, perimeter, area;
+        int numerator, denominator;
+        double decimal;
+
         Scanner scan = new Scanner(System.in);
+        System.out.print("Enter numerator: ");
+        numerator = scan.nextInt();
+        System.out.print("Enter denominator: ");
+        denominator = scan.nextInt();
 
-        System.out.println("Please enter length of the side of a square and " +
-                "I will calculate the perimeter and area of the square");
+        decimal = (double) numerator /denominator;
+        System.out.println("The fraction works out to be: "+decimal);
 
-        side = scan.nextInt();
-        perimeter = side * 4;
-        area = side*side;
-        System.out.println("The perimeter of the square is "+perimeter+" and the area is "+area);
-    }{
+    }
 }
