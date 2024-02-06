@@ -1,4 +1,3 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-24ddc0f5d75046c5622901739e7c5dd533143b0c8e959d652212380cedb1ea36.svg)](https://classroom.github.com/a/mx4vd1Bo)
 
 # OOP 2024 Portfolio
 ## Laura Gandia
@@ -10,11 +9,11 @@
 ## Work Schedule
 **1 Getting Started**\
 **committed by 5th February**\
-1 Hello World        -- to do\
-2 Test               -- to do\
-3 Personal Details   -- to do\
-4 Diamonds           -- to do\
-5 Questions          -- to do
+1 Hello World        -- completed\
+2 Test               -- completed\
+3 Personal Details   -- completed\
+4 Diamonds           -- completed\
+5 Questions          -- completed
 
 **2 Data and Expressions**\
 **committed by 19th February**\
