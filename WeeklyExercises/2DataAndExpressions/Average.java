@@ -21,8 +21,7 @@ public class Average
         val1 = scan.nextInt();
         val2 = scan.nextInt();
         val3 = scan.nextInt();
-
-
-
+        average = (double) (val1 + val2 + val3) / 3;
+        System.out.println(average);
     }
 }
