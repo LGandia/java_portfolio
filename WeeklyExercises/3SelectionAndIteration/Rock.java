@@ -4,7 +4,8 @@
 //   Play Rock, Paper, Scissors with the user
 //
 // ****************************************************************
-import java.util.Locale;
+
+//import java.util.Locale; (unused)
 import java.util.Scanner;
 import java.util.Random;
 

@@ -1,8 +1,14 @@
 import java.util.Scanner;
 
-public class SquareCalculations
-{
-    public static void main(String[] args) {
+public class SquareCalculations{
+    public static void main (String[] args)
+    {
+    SquareCalculations O = new SquareCalculations();
+    O.go();
+    }
+
+    public void go()
+    {
         int side, perimeter, area;
         Scanner scan = new Scanner(System.in);
 

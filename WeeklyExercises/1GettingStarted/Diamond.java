@@ -1,7 +1,12 @@
 public class Diamond {
     public static void main (String[] args)
     {
-        System.out.println ("       *");
+        Diamond O = new Diamond();
+        O.go();
+    }
+    public void go()
+    {
+        System.out.println("       *");
 
         System.out.println("      ***");
 
@@ -14,6 +19,5 @@ public class Diamond {
         System.out.println("      ***");
 
         System.out.println("       *");
-
     }
 }
