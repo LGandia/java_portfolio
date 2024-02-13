@@ -17,16 +17,16 @@
 
 **2 Data and Expressions**\
 **committed by 19th February**\
-1 Table of Student Grades  -- to do\
-2 Computing Averages       -- to do\
-3 Miles to Kilometers      -- to do\
-4 Square Calculation       -- to do\
-5 Fraction -- to do        -- to do
+1 Table of Student Grades  -- completed\
+2 Computing Averages       -- completed\
+3 Miles to Kilometers      -- completed\
+4 Square Calculation       -- completed\
+5 Fraction -- to do        -- completed
 
 **3 Selection and Iteration**\
 **committed by 26th February**\
-1 Computing a Pay Increase   -- to do\
-2 Rock, Paper, Scissors      -- to do\
+1 Computing a Pay Increase   -- completed\
+2 Rock, Paper, Scissors      -- completed\
 3 String Reverser            -- to do\
 4 Punctuation Marks          -- to do
 
