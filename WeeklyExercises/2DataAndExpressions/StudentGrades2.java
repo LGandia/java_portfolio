@@ -1,7 +1,11 @@
 public class StudentGrades2 {
     public static void main (String[] args)
     {
-
+        StudentGrades2 O = new StudentGrades2();
+        O.go();
+    }
+    public void go()
+    {
         System.out.println("///////////////////" +
                 "\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\");
         System.out.println("==          Student Points          ==");

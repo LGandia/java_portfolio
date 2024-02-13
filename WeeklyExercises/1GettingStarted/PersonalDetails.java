@@ -4,6 +4,11 @@ public class PersonalDetails {
     //----------------------------------------------------
     public static void main (String[] args)
     {
+        PersonalDetails O = new PersonalDetails();
+        O.go();
+    }
+    public void go()
+    {
         System.out.println ("Name: Laura Gandia");
 
         System.out.println("Address: Leeds Metropolitan University");
