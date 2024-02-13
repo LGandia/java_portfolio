@@ -8,10 +8,14 @@ import java.util.Locale;
 import java.util.Scanner;
 import java.util.Random;
 
-
 public class Rock
 {
     public static void main(String[] args)
+    {
+        Rock O = new Rock();
+        O.go();
+    }
+    public void go()
     {
         String personPlay;    //User's play -- "R", "P", or "S"
         String computerPlay;  //Computer's play -- "R", "P", or "S"
@@ -33,7 +37,6 @@ public class Rock
 
         //Generate computer's play (0,1,2)
         computerInt = generator.nextInt(3);
-        System.out.println(computerInt);
 
         //Translate computer's randomly generated play to string
 
@@ -57,27 +60,26 @@ public class Rock
         //Print computer's play
         System.out.println("Computer chose: "+ computerPlay);
         //See who won.  Use nested ifs instead of &&.
-         if (personPlay.equals(computerPlay))
-             System.out.println("It's a tie!");
+        if (personPlay.equals(computerPlay))
+            System.out.println("It's a tie!");
 
-         else if (personPlay.equals("R"))
+        else if (personPlay.equals("R"))
             if (computerPlay.equals("S"))
                 System.out.println("Rock crushes scissors.  You win!!");
             else
                 System.out.println("Paper wraps rock. You loose!!");
 
-         else if (personPlay.equals("S"))
-           if (computerPlay.equals("P"))
-               System.out.println("Scissors cuts paper. You win!!");
-           else
-               System.out.println("Rock crushes scissors. You loose!!");
+        else if (personPlay.equals("S"))
+            if (computerPlay.equals("P"))
+                System.out.println("Scissors cuts paper. You win!!");
+            else
+                System.out.println("Rock crushes scissors. You loose!!");
 
-         else if (personPlay.equals("P"))
-           if (computerPlay.equals("R"))
-               System.out.println("Paper wraps rock. You loose!!");
-           else
-               System.out.println("Scissors cuts paper. You win!!");
-
+        else if (personPlay.equals("P"))
+            if (computerPlay.equals("R"))
+                System.out.println("Paper wraps rock. You loose!!");
+            else
+                System.out.println("Scissors cuts paper. You win!!");
 
     }
 }
