@@ -31,16 +31,11 @@ public class Salary
         // Compute the raise using if ...
 
         if ("Excellent".equals(rating))
-        {
             raise = 0.06 * currentSalary;
-        } else if ("Good".equals(rating))
-        {
+        else if ("Good".equals(rating))
             raise = 0.04 * currentSalary;
-        }
         else if ("Poor".equals(rating))
-        {
             raise = 0.015 * currentSalary;
-        }
 
         newSalary = currentSalary + raise;
 
