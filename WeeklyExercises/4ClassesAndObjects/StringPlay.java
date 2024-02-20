@@ -25,10 +25,10 @@ public class StringPlay
         change1 = college.toUpperCase(Locale.ROOT); // part (c)
 
 
-        change2 = ______________________________________________; // part (d)
+        change2 = college.replace('e','*'); // part (d)
 
 
-        change3 = ______________________________________________; // part (e)
+        change3 = college.concat(town); // part (e)
 
 
         System.out.println ("The final string is " + change3);
