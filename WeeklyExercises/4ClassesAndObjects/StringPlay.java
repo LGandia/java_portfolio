@@ -1,3 +1,5 @@
+import java.util.Locale;
+
 // **************************************************
 //   StringPlay.java
 //
@@ -11,18 +13,16 @@ public class StringPlay
 
         String town = "Anytown, UK"; // part (a)
 
-
         int stringLength;
         String change1, change2, change3;
 
-
-        ________________________________________________________; // part (b)
+        stringLength = college.length(); // part (b)
 
 
         System.out.println (college + " contains " + stringLength + " characters.");
 
 
-        change1 = ______________________________________________; // part (c)
+        change1 = college.toUpperCase(Locale.ROOT); // part (c)
 
 
         change2 = ______________________________________________; // part (d)
