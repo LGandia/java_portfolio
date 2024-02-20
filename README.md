@@ -27,7 +27,7 @@
 **committed by 26th February**\
 1 Computing a Pay Increase   -- completed\
 2 Rock, Paper, Scissors      -- completed\
-3 String Reverser            -- to do\
+3 String Reverser            -- completed\
 4 Punctuation Marks          -- to do
 
 **4 Classes and Objects**\
