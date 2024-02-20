@@ -7,18 +7,18 @@ public class StringReverse{
         O.go();
     }
     public void go(){
-
         Scanner scan = new Scanner(System.in);
 
         String sentence;
-        StringBuilder reverse = new StringBuilder();
+        String reverse = "";
 
         System.out.print("Input the word(s) to be reversed: ");
-        sentence = scan.next();
+        sentence = scan.nextLine();
 
         for (int i = sentence.length() - 1; i>0; i--){
-            reverse.append(sentence.charAt(i));
+            reverse += sentence.charAt(i);
         }
+        System.out.println(sentence.length());
         System.out.println(reverse);
     }
 }
