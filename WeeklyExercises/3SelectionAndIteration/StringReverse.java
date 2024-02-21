@@ -15,7 +15,8 @@ public class StringReverse{
         System.out.print("Input the word(s) to be reversed: ");
         sentence = scan.nextLine();
 
-        for (int i = sentence.length() - 1; i>=0; i--){
+        for (int i = sentence.length() - 1; i>=0; i--)
+        {
             reverse.append(sentence.charAt(i));
         }
         System.out.println(sentence.length());
