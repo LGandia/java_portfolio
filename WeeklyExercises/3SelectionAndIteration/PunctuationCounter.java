@@ -41,14 +41,14 @@ public class PunctuationCounter
         // Mary had a little lamb, her fleece was as white as snow, and everywhere Mary went, the lamb was sure to go. -that was a nice poem- the end.
 
         System.out.println("Punctuation"+"\t\t\t"+"Number");
-        System.out.println("exclamation (!)" + exclamation);
-        System.out.println("comma (,) = " + (comma));
-        System.out.println("semicolon (;) = " + (semicolon));
-        System.out.println("period (.) = " + period);
-        System.out.println("interrogation (?) = " + (interrogation));
-        System.out.println("dash (-) = " + (dash));
-        System.out.println("slash (/) = " + (slash));
-        System.out.println("backslash (\") = " + (bslash));
-        System.out.println("colon (:) = " + (colon));
+        System.out.println("exclamation (!)"+"\t\t"+ exclamation);
+        System.out.println("comma (,)"+"\t\t\t"+ (comma));
+        System.out.println("semicolon (;)"+"\t\t"+ (semicolon));
+        System.out.println("period (.)"+"\t\t\t"+ period);
+        System.out.println("interrogation (?)"+"\t"+ (interrogation));
+        System.out.println("dash (-)"+"\t\t\t"+ (dash));
+        System.out.println("slash (/)"+"\t\t\t" + (slash));
+        System.out.println("backslash (\")"+"\t\t" + (bslash));
+        System.out.println("colon (:)"+"\t\t\t" + (colon));
     }
 }
