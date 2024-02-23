@@ -7,6 +7,8 @@
 //
 // ********************************************************
 
+import java.text.NumberFormat;
+import java.util.Locale;
 import java.util.Scanner;
 
 public class Deli
@@ -30,7 +32,7 @@ public class Deli
 
         // Declare money as a NumberFormat object and use the
         // getCurrencyInstance method to assign it a value
-
+        NumberFormat money = NumberFormat.getCurrencyInstance(Locale.UK);
 
         // Declare fmt as a DecimalFormat object and instantiate
         // it to format numbers with at least one digit to the left of the
