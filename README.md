@@ -34,7 +34,7 @@
 **committed by 4th March**\
 1 Using String Objects     -- completed\
 2 Dice                     -- completed\
-3 Formatting Output        -- to do\
+3 Formatting Output        -- completed\
 4 Pin Encryption           -- completed\
 5 Sphere Calculation       -- to do
 
