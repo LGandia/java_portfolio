@@ -38,8 +38,8 @@ public class Deli
         // Declare fmt as a DecimalFormat object and instantiate
         // it to format numbers with at least one digit to the left of the
         // decimal and the fractional part rounded to two digits.
-        //DecimalFormat fmt =
-
+        String pattern = "##0.##";
+        DecimalFormat fmt = new DecimalFormat(pattern);
 
         // prompt the user and read in each input
         System.out.println ("Welcome to the CS Deli!!\n ");
@@ -56,9 +56,10 @@ public class Deli
         weight = weightOunces / OUNCES_PER_POUND;
         totalPrice = pricePerPound * weight;
 
-
         // Print the label using the formatting objects
         // fmt for the weight in pounds and money for the prices
+        System.out.println("Weight: " + fmt.format(weight));
+        System.out.println("Total price: " + money.format(totalPrice));
 
 
     }
