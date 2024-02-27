@@ -1,6 +1,8 @@
 class Sphere
 {
-    private double diameter, volume, surfaceArea;
+    private double diameter;
+    private final double volume;
+    private final double surfaceArea;
 
     // constructor method
     public Sphere(double diameter, double volume, double surfaceArea) {
@@ -15,6 +17,15 @@ class Sphere
     }
     public void setDiameter(double diameter) {
         this.diameter = diameter;
+    }
+
+    @Override
+    public String toString() {
+        return "Sphere{" +
+                "diameter=" + diameter +
+                ", volume=" + volume +
+                ", surfaceArea=" + surfaceArea +
+                '}';
     }
 }
 
