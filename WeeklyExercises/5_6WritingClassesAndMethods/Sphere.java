@@ -1,4 +1,4 @@
-class Sphere
+public class Sphere
 {
     private double diameter;
     private final double volume;
@@ -19,6 +19,14 @@ class Sphere
         this.diameter = diameter;
     }
 
+    public double getVolume() {
+        return volume;
+    }
+
+    public double getSurfaceArea() {
+        return surfaceArea;
+    }
+
     @Override
     public String toString() {
         return "Sphere{" +
@@ -26,6 +34,8 @@ class Sphere
                 ", volume=" + volume +
                 ", surfaceArea=" + surfaceArea +
                 '}';
+    }
+    public static void main(String[] args) {
     }
 }
 
