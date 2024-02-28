@@ -23,7 +23,6 @@ public class StringReverse
             reverse.append(sentence.charAt(i));
         }
         String[] sentenceArray = reverse.toString().split(" ");
-        System.out.println(reverse);
 
         for (int i = sentenceArray.length-1; i >= 0; i--) {
             System.out.print(sentenceArray[i] + " ");
