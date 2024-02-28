@@ -1,12 +1,15 @@
 import java.util.Scanner;
 
-public class StringReverse{
-    public static void main(String[] args){
+public class StringReverse
+{
+    public static void main(String[] args)
+    {
 
         StringReverse O = new StringReverse();
         O.go();
     }
-    public void go(){
+    public void go()
+    {
         Scanner scan = new Scanner(System.in);
 
         String sentence;
@@ -19,7 +22,11 @@ public class StringReverse{
         {
             reverse.append(sentence.charAt(i));
         }
-        System.out.println(sentence.length());
+        String[] sentenceArray = reverse.toString().split(" ");
         System.out.println(reverse);
+
+        for (int i = sentenceArray.length-1; i >= 0; i--) {
+            System.out.print(sentenceArray[i] + " ");
+        }
     }
 }
