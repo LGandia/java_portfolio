@@ -19,9 +19,15 @@ public class Sphere
         double radius = diameter/2;
         return (4.0/3.0)*Math.PI*Math.pow(radius,3);
     }
-    public static void main(String[] args) {
+    public double calculateSurfaceArea(){
+        double radius = diameter/2;
+        return 4*Math.PI*Math.pow(radius,2);
+    }
+    public String toString() {
+        return "Sphere with diameter " + diameter +
+                ", surface area " + calculateSurfaceArea()+
+                " and volume " + calculateVolume();
     }
 }
-
 
 
