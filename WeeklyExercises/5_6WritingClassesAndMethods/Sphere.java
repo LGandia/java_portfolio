@@ -1,14 +1,10 @@
 public class Sphere
 {
     private double diameter;
-    private final double volume;
-    private final double surfaceArea;
 
     // constructor method
-    public Sphere(double diameter, double volume, double surfaceArea) {
+    public Sphere(double diameter) {
         this.diameter = diameter;
-        this.volume = ((double) 4 /3)*( (double) 22 /7)*(diameter/2)*(diameter/2)*(diameter/2);
-        this.surfaceArea = (double) (4 * (22/7))*diameter*diameter;
     }
 
     // Diameter getter and setter methods.
@@ -19,21 +15,9 @@ public class Sphere
         this.diameter = diameter;
     }
 
-    public double getVolume() {
-        return volume;
-    }
-
-    public double getSurfaceArea() {
-        return surfaceArea;
-    }
-
-    @Override
-    public String toString() {
-        return "Sphere{" +
-                "diameter=" + diameter +
-                ", volume=" + volume +
-                ", surfaceArea=" + surfaceArea +
-                '}';
+    public double calculateVolume(){
+        double radius = diameter/2;
+        return (4.0/3.0)*Math.PI*Math.pow(radius,3);
     }
     public static void main(String[] args) {
     }
