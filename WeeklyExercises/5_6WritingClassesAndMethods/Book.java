@@ -39,9 +39,26 @@ public class Book
     public void setCopyrightDate(String copyrightDate) {
         this.copyrightDate = copyrightDate;
     }
-//    public String toString() {
-//        return "Sphere with diameter " + diameter +
-//                ", surface area " + calculateSurfaceArea()+
-//                " and volume " + calculateVolume();
-//    }
+
+    @Override
+    public String toString() {
+        return "========================================="+"\n"+
+                "TITLE:\t\t\t"+ title+"\n"+
+                "Author:\t\t\t"+author+"\n"+
+                "Publisher:\t\t"+publisher+"\n"+
+                "Copyright Date:\t"+copyrightDate+
+                "\n"+"========================================="+"\n";
+    }
+}
+class Bookshelf {
+    public static void main(String[] args) {
+        Book book1 = new Book("Vilest Things","Chloe Gong",
+                "Simon & Schuster","Red Room Press, 2009");
+
+        Book book2 = new Book("Not Even Bones","Rebecca Schaeffer",
+                "Houghton Mifflin Harcourt","4 September 2018");
+
+        System.out.println(book1);
+        System.out.println(book2);
+    }
 }
