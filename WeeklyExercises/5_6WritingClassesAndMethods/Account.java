@@ -26,6 +26,10 @@ public class Account
         balance = initial;
     }
 
+    public Account(String owner, long account) {
+        this(owner, account, 0.0);
+    }
+
     //-----------------------------------------------------------------
     //  Deposits the specified amount into this account and returns
     //  the new balance. The balance is not modified if the deposit
@@ -77,5 +81,13 @@ public class Account
         NumberFormat fmt = NumberFormat.getCurrencyInstance();
 
         return (acctNumber + "\t" + name + "\t" + fmt.format(balance));
+    }
+}
+class Transactions {
+    public static void main(String[] args) {
+        Account account1 = new Account("Fidel Santos", 500000, 10);
+        Account account2 = new Account("Hazel Haires", 8054645);
+        System.out.println(account1);
+        System.out.println(account2);
     }
 }
