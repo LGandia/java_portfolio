@@ -14,22 +14,31 @@ public class Book
         this.copyrightDate = copyrightDate;
     }
 
+    public String getTitle() {
+        return title;
+    }
+    public String getAuthor() {
+        return author;
+    }
+    public String getPublisher() {
+        return publisher;
+    }
+    public String getCopyrightDate() {
+        return copyrightDate;
+    }
+
     public void setTitle(String title) {
         this.title = title;
     }
-
     public void setAuthor(String author) {
         this.author = author;
     }
-
     public void setPublisher(String publisher) {
         this.publisher = publisher;
     }
-
     public void setCopyrightDate(String copyrightDate) {
         this.copyrightDate = copyrightDate;
     }
-
 //    public String toString() {
 //        return "Sphere with diameter " + diameter +
 //                ", surface area " + calculateSurfaceArea()+
