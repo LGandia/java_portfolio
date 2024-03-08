@@ -44,7 +44,7 @@
 2 Books        -- completed\
 3 Bulb         -- completed\
 4 Accounts     -- completed\
-5 Cards        -- to do
+5 Cards        -- completed
 
 **7 Inheritance**\
 **committed by 8th April**\
