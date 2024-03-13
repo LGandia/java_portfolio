@@ -20,10 +20,12 @@ class Doctor extends Employee{
     }
 
     public void getDoctorDetails() {
+        System.out.println("=================================");
         System.out.println("Employee ID: "+this.employeeID);
         System.out.println("Name: "+this.employeeName);
         System.out.println("Department: "+this.employeeDepartment);
         System.out.println("Work: "+this.employeeWorkType);
+        System.out.println("=================================");
     }
 }
 class Nurse extends Employee{
@@ -34,10 +36,12 @@ class Nurse extends Employee{
     }
 
     public void getNurseDetails() {
+        System.out.println("=================================");
         System.out.println("Employee ID: "+this.employeeID);
         System.out.println("Name: "+this.employeeName);
         System.out.println("Department: "+this.employeeDepartment);
         System.out.println("Work: "+this.employeeWorkType);
+        System.out.println("=================================");
     }
 }
 
@@ -49,10 +53,12 @@ class Receptionist extends Employee{
     }
 
     public void getReceptionistDetails() {
+        System.out.println("=================================");
         System.out.println("Employee ID: "+this.employeeID);
         System.out.println("Name: "+this.employeeName);
         System.out.println("Department: "+this.employeeDepartment);
         System.out.println("Work: "+this.employeeWorkType);
+        System.out.println("=================================");
     }
 }
 class Cleaner extends Employee{
@@ -63,16 +69,27 @@ class Cleaner extends Employee{
     }
 
     public void getCleanerDetails() {
+        System.out.println("=================================");
         System.out.println("Employee ID: "+this.employeeID);
         System.out.println("Name: "+this.employeeName);
         System.out.println("Department: "+this.employeeDepartment);
         System.out.println("Work: "+this.employeeWorkType);
+        System.out.println("=================================");
     }
 }
 class Hospital {
     public static void main (String[] args) {
         Doctor doctor = new Doctor(498984, "Dylan", "Medicine","Cardiologist","Work");
         doctor.getDoctorDetails();
+
+        Nurse nurse = new Nurse(16156, "Dew", "Oncology","Blood sampling","Chemotherapy");
+        nurse.getNurseDetails();
+
+        Receptionist receptionist = new Receptionist(798948, "Casie", "Cafeteria","Client services","Ensure comfort");
+        receptionist.getReceptionistDetails();
+
+        Cleaner cleaner = new Cleaner(615615, "Janek", "Disinfection","Deep cleaning","Clean operating room");
+        cleaner.getCleanerDetails();
     }
 }
 
