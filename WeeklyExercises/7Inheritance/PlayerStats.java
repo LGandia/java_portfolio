@@ -24,6 +24,22 @@ class FootballStats extends PlayerStats{
         this.fieldPosition = fieldPosition;
     }
 }
+class CricketStats extends PlayerStats{
+    public int pointsScored;
+    public String league;
+    public float playerShoeSize;
+    public double playerHeight;
+
+    public CricketStats(String playerName, String playerSurname, String playerSport, String playerTeam,
+                         int pointsScored, String league, float playerShoeSize, double playerHeight) {
+        super(playerName, playerSurname, playerSport, playerTeam);
+
+        this.pointsScored = pointsScored;
+        this.league = league;
+        this.playerShoeSize = playerShoeSize;
+        this.playerHeight = playerHeight;
+    }
+}
 class SportReport {
     public static void main (String[] args) {
 
