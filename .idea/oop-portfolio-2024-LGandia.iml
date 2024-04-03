@@ -9,6 +9,7 @@
       <sourceFolder url="file://$MODULE_DIR$/WeeklyExercises/4ClassesAndObjects" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/WeeklyExercises/5_6WritingClassesAndMethods" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/WeeklyExercises/7Inheritance" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/WeeklyExercises/8Polymorphism" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

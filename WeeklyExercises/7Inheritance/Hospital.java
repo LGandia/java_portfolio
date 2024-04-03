@@ -1,17 +1,17 @@
-abstract class Employee{
+abstract class HospitalEmployee{
     public int employeeID;
     public String employeeName;
     public String employeeDepartment;
     public String employeeWorkType;
 
-    public Employee(int employeeID, String employeeName, String employeeDepartment, String employeeWorkType) {
+    public HospitalEmployee(int employeeID, String employeeName, String employeeDepartment, String employeeWorkType) {
         this.employeeID = employeeID;
         this.employeeName = employeeName;
         this.employeeDepartment = employeeDepartment;
         this.employeeWorkType = employeeWorkType;
     }
 }
-class Doctor extends Employee{
+class Doctor extends HospitalEmployee{
     public String employeeDuties;
     public Doctor(int employeeID, String employeeName, String employeeDepartment, String employeeWorkType, String employeeDuties){
 
@@ -28,7 +28,7 @@ class Doctor extends Employee{
         System.out.println("=================================");
     }
 }
-class Nurse extends Employee{
+class Nurse extends HospitalEmployee{
     public String employeeDuties;
     public Nurse(int employeeID, String employeeName, String employeeDepartment, String employeeWorkType, String employeeDuties) {
         super(employeeID, employeeName, employeeDepartment, employeeWorkType);
@@ -45,7 +45,7 @@ class Nurse extends Employee{
     }
 }
 
-class Receptionist extends Employee{
+class Receptionist extends HospitalEmployee{
     public String employeeDuties;
     public Receptionist(int employeeID, String employeeName, String employeeDepartment, String employeeWorkType, String employeeDuties) {
         super(employeeID, employeeName, employeeDepartment, employeeWorkType);
@@ -61,7 +61,7 @@ class Receptionist extends Employee{
         System.out.println("=================================");
     }
 }
-class Cleaner extends Employee{
+class Cleaner extends HospitalEmployee{
     public String employeeDuties;
     public Cleaner(int employeeID, String employeeName, String employeeDepartment, String employeeWorkType, String employeeDuties) {
         super(employeeID, employeeName, employeeDepartment, employeeWorkType);
