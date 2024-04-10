@@ -4,9 +4,9 @@
 
 [Example Programs](https://github.com/LBU-OOP/PolymorphismExamples)
 # Programming Projects:
-***1) Firm Vacation***
+***1) FirmVacation.Firm Vacation***
 
-Modify the Firm example from the examples such that all employees can be given vacation options depending on their classification/roll. Modify the driver program to demonstrate this new functionality.
+Modify the FirmVacation.Firm example from the examples such that all employees can be given vacation options depending on their classification/roll. Modify the driver program to demonstrate this new functionality.
 
 ***2) Password (PP4)***
 

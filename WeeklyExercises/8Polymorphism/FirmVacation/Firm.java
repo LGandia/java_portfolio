@@ -1,5 +1,5 @@
-//********************************************************************
-//  Firm.java       Java Foundations
+package FirmVacation;//********************************************************************
+//  FirmVacation.Firm.java       Java Foundations
 //
 //  Demonstrates polymorphism via inheritance.
 //********************************************************************
@@ -16,13 +16,13 @@ public class Firm
         personnel.payday();
         for (StaffMember member : personnel.staffList) {
             if (member instanceof Executive) {
-                System.out.println("Executive gets 30 days of vacation.");
+                System.out.println("FirmVacation.Executive gets 30 days of vacation.");
             } else if (member instanceof Employee) {
-                System.out.println("Employee gets 25 days of vacation.");
+                System.out.println("FirmVacation.Employee gets 25 days of vacation.");
             } else if (member instanceof Hourly) {
-                System.out.println("Hourly employee gets 20 days of vacation.");
+                System.out.println("FirmVacation.Hourly employee gets 20 days of vacation.");
             } else {
-                System.out.println("Volunteer does not get paid vacation.");
+                System.out.println("FirmVacation.Volunteer does not get paid vacation.");
             }
         }
     }

@@ -1,5 +1,5 @@
-//********************************************************************
-//  Executive.java       Java Foundations
+package FirmVacation;//********************************************************************
+//  FirmVacation.Executive.java       Java Foundations
 //
 //  Represents an executive staff member, who can earn a bonus.
 //********************************************************************

@@ -1,5 +1,5 @@
-//********************************************************************
-//  Volunteer.java       Java Foundations
+package FirmVacation;//********************************************************************
+//  FirmVacation.Volunteer.java       Java Foundations
 //
 //  Represents a staff member that works as a volunteer.
 //********************************************************************

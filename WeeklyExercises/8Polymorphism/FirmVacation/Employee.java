@@ -1,5 +1,5 @@
-//********************************************************************
-//  Employee.java       Java Foundations
+package FirmVacation;//********************************************************************
+//  FirmVacation.Employee.java       Java Foundations
 //
 //  Represents a general paid employee.
 //********************************************************************

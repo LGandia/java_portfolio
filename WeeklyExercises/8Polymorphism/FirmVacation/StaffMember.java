@@ -1,5 +1,5 @@
-//********************************************************************
-//  StaffMember.java       Java Foundations
+package FirmVacation;//********************************************************************
+//  FirmVacation.StaffMember.java       Java Foundations
 //
 //  Represents a generic staff member.
 //********************************************************************

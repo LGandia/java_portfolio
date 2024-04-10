@@ -1,5 +1,5 @@
-//********************************************************************
-//  Hourly.java       Java Foundations
+package FirmVacation;//********************************************************************
+//  FirmVacation.Hourly.java       Java Foundations
 //
 //  Represents an employee that gets paid by the hour.
 //********************************************************************

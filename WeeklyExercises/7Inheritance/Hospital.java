@@ -21,7 +21,7 @@ class Doctor extends HospitalEmployee{
 
     public void getDoctorDetails() {
         System.out.println("=================================");
-        System.out.println("Employee ID: "+this.employeeID);
+        System.out.println("FirmVacation.Employee ID: "+this.employeeID);
         System.out.println("Name: "+this.employeeName);
         System.out.println("Department: "+this.employeeDepartment);
         System.out.println("Work: "+this.employeeWorkType);
@@ -37,7 +37,7 @@ class Nurse extends HospitalEmployee{
 
     public void getNurseDetails() {
         System.out.println("=================================");
-        System.out.println("Employee ID: "+this.employeeID);
+        System.out.println("FirmVacation.Employee ID: "+this.employeeID);
         System.out.println("Name: "+this.employeeName);
         System.out.println("Department: "+this.employeeDepartment);
         System.out.println("Work: "+this.employeeWorkType);
@@ -54,7 +54,7 @@ class Receptionist extends HospitalEmployee{
 
     public void getReceptionistDetails() {
         System.out.println("=================================");
-        System.out.println("Employee ID: "+this.employeeID);
+        System.out.println("FirmVacation.Employee ID: "+this.employeeID);
         System.out.println("Name: "+this.employeeName);
         System.out.println("Department: "+this.employeeDepartment);
         System.out.println("Work: "+this.employeeWorkType);
@@ -70,7 +70,7 @@ class Cleaner extends HospitalEmployee{
 
     public void getCleanerDetails() {
         System.out.println("=================================");
-        System.out.println("Employee ID: "+this.employeeID);
+        System.out.println("FirmVacation.Employee ID: "+this.employeeID);
         System.out.println("Name: "+this.employeeName);
         System.out.println("Department: "+this.employeeDepartment);
         System.out.println("Work: "+this.employeeWorkType);

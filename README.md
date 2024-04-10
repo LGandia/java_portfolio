@@ -53,7 +53,7 @@
 
 **8 Polymorphism**\
 **committed by 15th April**\
-1 Firm Vacation           -- to do\
+1 FirmVacation.Firm Vacation           -- to do\
 2 Password                -- to do
 
 **9 Further Arrays**\

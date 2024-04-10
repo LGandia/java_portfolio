@@ -1,5 +1,5 @@
-//********************************************************************
-//  Staff.java       Java Foundations
+package FirmVacation;//********************************************************************
+//  FirmVacation.Staff.java       Java Foundations
 //
 //  Represents the personnel staff of a particular business.
 //********************************************************************
