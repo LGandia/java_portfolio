@@ -6,7 +6,7 @@
 
 public class Staff
 {
-    private StaffMember[] staffList;
+    StaffMember[] staffList;
 
     //-----------------------------------------------------------------
     //  Constructor: Sets up the list of staff members.
