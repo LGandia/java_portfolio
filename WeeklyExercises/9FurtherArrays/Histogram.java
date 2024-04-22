@@ -11,12 +11,15 @@ public class Histogram {
                 int number = scanner.nextInt();
                 if (number >= 1 && number <= 100) {
                     frequency[(number - 1) / 10]++;
-                } else {
+                }
+                else {
                     System.out.println("Invalid input. Please enter an integer between 1 and 100.");
                 }
-            } else if (scanner.hasNext("end")) {
+            }
+            else if (scanner.hasNext("end")) {
                 break;
-            } else {
+            }
+            else {
                 System.out.println("Invalid input. Please enter an integer or 'end'.");
                 scanner.next(); // discard the invalid input
             }
