@@ -13,12 +13,13 @@ class Person {
 
     @Override
     public String toString() {
-        return "First Name: " + firstName + ", Last Name: " + lastName + ", Postal Code: " + postalCode;
+        return "First Name: " + firstName + "\nLast Name: " + lastName + "\nPostal Code: " + postalCode +"\n";
     }
 }
 
 public class Postcodes {
     public static void main(String[] args) {
+        System.out.println("Enter user in the following format {first name} tab {last name} tab {post code}. Leave blank to terminate program");
         Scanner scanner = new Scanner(System.in);
         Person[] persons = new Person[25];
         int count = 0;
@@ -26,8 +27,12 @@ public class Postcodes {
         while (scanner.hasNextLine() && count < 25) {
             String[] input = scanner.nextLine().split("\t");
             if (input.length == 3) {
+                System.out.println("Enter next user: ");
                 persons[count++] = new Person(input[0], input[1], input[2]);
-            } else {
+            } else if (input.length == 1) {
+                break;
+            }
+            else {
                 System.out.println("Invalid input. Please enter First Name, Last Name and Postal Code separated by tabs.");
             }
         }
