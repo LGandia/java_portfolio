@@ -9,7 +9,6 @@ class Question {
         this.answer = answer;
     }
 
-    // getters
     public String getQuestion() { return this.question; }
     public String getAnswer() { return this.answer; }
 }
@@ -45,5 +44,15 @@ class Quiz {
 
 public class QuizTime {
     public static void main(String[] args) {
+        Quiz quiz = new Quiz();
+
+        quiz.add(new Question("What occasion corresponds to the longest day of the year?", "The summer solstice"));
+        quiz.add(new Question("What is the distance from earth to the sun?", "93 million miles"));
+        quiz.add(new Question("Which country is the largest in the world?", "Russia"));
+        quiz.add(new Question("According to Guinness World Records, what's the best-selling book of all time?", "The Bible"));
+
+        quiz.giveQuiz();
+
+        System.out.println("Final score: " + quiz.getScore());
     }
 }
