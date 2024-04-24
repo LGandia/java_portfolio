@@ -1,3 +1,4 @@
+import java.util.Objects;
 import java.util.Scanner;
 
 class Person {
@@ -29,7 +30,7 @@ public class Postcodes {
             if (input.length == 3) {
                 System.out.println("Enter next user: ");
                 persons[count++] = new Person(input[0], input[1], input[2]);
-            } else if (input.length == 1) {
+            } else if (Objects.equals(input[0], "")) {
                 break;
             }
             else {
