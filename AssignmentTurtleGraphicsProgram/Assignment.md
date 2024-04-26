@@ -1,7 +1,8 @@
 [Refer to the assignment spec on myBeckett](https://drive.google.com/file/d/1ooGVFk3eAOXwvRC950gcW1g2m1jtAKIX/view)
 
-
 [There is useful information in the assignment spec directoty on myBeckett, including help videos](https://my.leedsbeckett.ac.uk/ultra/courses/_167312_1/cl/outline)
+
+[OOPGraphics documentation](https://lbu-oop.github.io/OOPturtleGraphicsLibrary/uk/ac/leedsbeckett/oop/OOPGraphics.html)
 
 # Your Task:
 For this assignment you are required to develop a programmatic solution, using the Java

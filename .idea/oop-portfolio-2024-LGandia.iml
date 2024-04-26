@@ -11,8 +11,18 @@
       <sourceFolder url="file://$MODULE_DIR$/WeeklyExercises/7Inheritance" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/WeeklyExercises/8Polymorphism" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/WeeklyExercises/9FurtherArrays" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/AssignmentTurtleGraphicsProgram" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$USER_HOME$/Downloads/OOPGraphics.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
   </component>
 </module>

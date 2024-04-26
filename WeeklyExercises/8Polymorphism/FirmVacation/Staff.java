@@ -15,7 +15,7 @@ public class Staff
     {
         staffList = new StaffMember[6];
 
-        staffList[0] = new Executive("Tony", "123 Main Line",
+        staffList[0] = new Executive("Tony", "123 MainClass Line",
                 "555-0469", "123-45-6789", 2423.07);
 
         staffList[1] = new Employee("Paulie", "456 Off Line",
