@@ -60,7 +60,7 @@ simple graphic) method (to draw the dancing turtle when the user types “about�
 field and either presses return or clicks the “ok” button.)
 
 (5 marks)
--[ ] Done
+-[x] Done
 
 ## Requirement 2 – command support 15 marks
 The second requirement is to implement some basic commands to allow drawing. The
