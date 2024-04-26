@@ -1,4 +1,5 @@
 import java.awt.FlowLayout;
+import java.util.Objects;
 import javax.swing.JFrame;
 import uk.ac.leedsbeckett.oop.OOPGraphics;
 public class TurtleGraphics extends OOPGraphics{
@@ -16,7 +17,10 @@ public class TurtleGraphics extends OOPGraphics{
         Screen.setVisible(true);                                 //now display it
     }
 
-    public void processCommand(String s) {
+    public void processCommand(String command) {
+        if (Objects.equals(command, "about")){
+            about();
+        }
 
     }
 }
