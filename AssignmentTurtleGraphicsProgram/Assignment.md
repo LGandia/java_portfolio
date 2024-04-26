@@ -101,15 +101,15 @@ pen should be set to “down”.
 | clear               | Clears the display.                                                                              |
 
 Turtle/Pen is in the middle of the screen pointing down (5 marks)
-* “penup” (1 mark)
-* “pendown” (1 mark1)
-* “turnleft” (2 marks) (1 mark only if no parameter)
-* “turnright” (2 marks) (1 mark only if no parameter)
-* “forward” (2 marks) (1 mark only if no parameter)
-* “backward” (2 marks) (1 mark only if no parameter)
-* at least four colour command (such as “red”) (3 marks)
-* “reset” move the turtle to the initial position and pointing down (1 mark)
-* “clear” clears display, turtle stays in the same position (1 mark)
+1. [ ] “penup” (1 mark)
+2. [ ] “pendown” (1 mark1)
+3. [ ] “turnleft” (2 marks) (1 mark only if no parameter)
+4. [ ] “turnright” (2 marks) (1 mark only if no parameter)
+5. [ ] “forward” (2 marks) (1 mark only if no parameter)
+6. [ ] “backward” (2 marks) (1 mark only if no parameter)
+7. [ ] at least four colour command (such as “red”) (3 marks)
+8. [ ] “reset” move the turtle to the initial position and pointing down (1 mark)
+9. [ ] “clear” clears display, turtle stays in the same position (1 mark)
 
 ## Requirement 3 Validating Commands. 10 Marks
 -[ ] Reports invalid commands (i.e. something not on the commands list above). (2 marks)
