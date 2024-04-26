@@ -56,8 +56,8 @@ The OOPGraphics panel has a text field and a button. You should be able to respo
 typed into this text field. The OOPGraphics system will call your program’s
 “processCommand()” method when the user presses return on the text field or clicks the ok
 button. You should make it so that your program only calls the “about()” (which displays a
-simple graphic) method (to draw the dancing turtle” when the user types “about” into the text
-field and either presses return or clicks the “ok” button.
+simple graphic) method (to draw the dancing turtle when the user types “about” into the text
+field and either presses return or clicks the “ok” button.)
 
 (5 marks)
 -[ ] Done
