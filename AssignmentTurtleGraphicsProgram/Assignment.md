@@ -68,12 +68,12 @@ user should be able to type in these commands within the text field provided by
 OOPGraphics. The application should be able to spot invalid commands and report
 this to the user. 
 
-- The commands to be supported are very explicit and MUST match those shown in the following table. 
+- The commands to be supported are very explicit and **MUST** match those shown in the following table. 
   -[ ] Done
-- The command MUST be typed in by the user and  not selected from a menu as some of them will 
-have parameters which MUST be typed together with the command, for example “forward 90”. 
+- The command **MUST** be typed in by the user and  not selected from a menu as some of them will 
+have parameters which **MUST** be typed together with the command, for example “forward 90”. 
   - [ ] Done
-- The parameters MUST not be entered separately, either after the command or in a separate text field. 
+- The parameters **MUST** not be entered separately, either after the command or in a separate text field. 
   -[ ] Done
 
   - Note that these commands involve calling the methods inside the OOPGraphics object. 
@@ -85,6 +85,31 @@ pen should be set to “down”.
   -[ ] Done
   - Hence, if the first command was “forward 100” a line
   from the middle of the screen to nearer the bottom would be drawn.
+
+| Command             | Description                                                                                      |
+|:--------------------|:-------------------------------------------------------------------------------------------------|
+| penup               | Lifts the pen from the canvas, so that movement does not get shown.                              |
+| pendown             | Places the pen down on the canvas so movement gets shown as a drawn line.                        |
+| turnleft <degrees>  | Turn <degrees> to the left                                                                       |
+| forward <distance>  | Move forward the specified distance                                                              |
+| backward <distance> | Move forward the specified distance                                                              |
+| black               | Move forward the specified distance                                                              |
+| green               | Sets the output pen colour to green.                                                             |
+| red                 | Sets the output pen colour to red.                                                               |
+| white               | Sets the output pen colour to white.                                                             |
+| reset               | Resets the canvas to its initial state with turtle pointing down but does not clear the display. |
+| clear               | Clears the display.                                                                              |
+
+Turtle/Pen is in the middle of the screen pointing down (5 marks)
+* “penup” (1 mark)
+* “pendown” (1 mark1)
+* “turnleft” (2 marks) (1 mark only if no parameter)
+* “turnright” (2 marks) (1 mark only if no parameter)
+* “forward” (2 marks) (1 mark only if no parameter)
+* “backward” (2 marks) (1 mark only if no parameter)
+* at least four colour command (such as “red”) (3 marks)
+* “reset” move the turtle to the initial position and pointing down (1 mark)
+* “clear” clears display, turtle stays in the same position (1 mark)
 
 ## Requirement 3 Validating Commands. 10 Marks
 -[ ] Reports invalid commands (i.e. something not on the commands list above). (2 marks)
