@@ -119,13 +119,12 @@ Turtle/Pen is in the middle of the screen pointing down (5 marks)
 
 -[x] Detects non numeric data for a parameter. (3 marks)
 
--[x] Correctly bounds parameters (i.e. negative or non sensible values are reported as errors). (3
+-[x] Correctly bounds parameters (i.e. negative or non-sensible values are reported as errors). (3
 marks)
 
 ## Requirement 4 – loading, saving and exiting. 15 marks
 - “Load” and “Save” should allow the user save and load the image and to save and
 load a set of commands that the user has typed in.
-
 - The current image should be saved to a file and also be able to be loaded back into
 the system and drawing recommenced. 
 - If the user attempts to load a new image without the current one been saved 
@@ -147,9 +146,9 @@ Eclipse).
 You have already used inheritance because you have extended the OOPGraphics class. This
 is because you have been forced to add a processCommands(String) method. Without putting
 it you would get a syntax error because OOPGraphics needs to call it when it detects an event
-on the button or text field. You can do much more with inheritance however. 
+on the button or text field. You can do much more with inheritance, however. 
 
-You can add new methods and you can replace existing methods.
+You can add new methods, and you can replace existing methods.
 
 All of the following should be implemented as methods in your code but also as commands that the user can type at run time.
 -[ ] Override the about() method so that it still does the same “dance” but appends a message
