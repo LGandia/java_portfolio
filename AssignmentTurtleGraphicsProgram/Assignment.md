@@ -69,12 +69,12 @@ OOPGraphics. The application should be able to spot invalid commands and report
 this to the user. 
 
 - The commands to be supported are very explicit and **MUST** match those shown in the following table. 
-  -[ ] Done
+  -[x] Done
 - The command **MUST** be typed in by the user and  not selected from a menu as some of them will 
 have parameters which **MUST** be typed together with the command, for example “forward 90”. 
-  - [ ] Done
+  - [x] Done
 - The parameters **MUST** not be entered separately, either after the command or in a separate text field. 
-  -[ ] Done
+  -[x] Done
 
   - Note that these commands involve calling the methods inside the OOPGraphics object. 
   - You should look at the documentation for OOPGraphics.
@@ -82,7 +82,7 @@ have parameters which **MUST** be typed together with the command, for example �
 - When the program first runs or the reset command is issued, the turtle/pen
 should be set to the middle of the canvas and point down the screen and the
 pen should be set to “down”.
-  -[ ] Done
+  -[x] Done
   - Hence, if the first command was “forward 100” a line
   from the middle of the screen to nearer the bottom would be drawn.
 
