@@ -26,6 +26,19 @@ public class TurtleGraphics extends OOPGraphics{
                 case "about":
                     about();
                     break;
+                case "load":
+                    System.out.println("load");
+                    break;
+                case "save":
+                    System.out.println("save");
+                    break;
+                case "reset":
+                    reset();
+                    break;
+                case "clear":
+                    clear();
+                    break;
+
                 case "penup":
                     penUp();
                     System.out.println("penup");
@@ -34,6 +47,7 @@ public class TurtleGraphics extends OOPGraphics{
                     penDown();
                     System.out.println("pendown");
                     break;
+
 
                 case "black":
                     setPenColour(Color.black);
@@ -50,16 +64,6 @@ public class TurtleGraphics extends OOPGraphics{
                 case "white":
                     setPenColour(Color.white);
                     System.out.println("white");
-                    break;
-
-                case "reset":
-                    reset();
-                    penDown();
-                    System.out.println("reset");
-                    break;
-                case "clear":
-                    System.out.println("clear");
-                    clear();
                     break;
 
                 case "turnleft", "turnright", "forward", "backward":
