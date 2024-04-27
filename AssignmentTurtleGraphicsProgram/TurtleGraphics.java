@@ -20,7 +20,6 @@ public class TurtleGraphics extends OOPGraphics{
 
     public void processCommand(String command) {
         int countWords = command.split("\\s").length;
-        System.out.println(countWords);
 
         if (countWords == 1){
             switch (command){
@@ -48,33 +47,43 @@ public class TurtleGraphics extends OOPGraphics{
                 case "clear":
                     System.out.println("clear");
                     break;
+
+                case "turnleft", "turnright", "forward", "backward":
+                    System.out.println("Please enter a parameter");
+                    break;
+
+                default:
+                    System.out.println("Invalid command");
             }
-        }
-        else if (countWords == 2){
+        } else if (countWords == 2){
             String[] words = command.split("\\s");
             System.out.println(Arrays.toString(words));
 
             try {
                 int length = Integer.parseInt(words[1]);
-                switch (words[0]) {
-                    case "turnleft":
-                        System.out.println("You want to turn left");
-                        break;
-                    case "turnright":
-                        System.out.println("You want to turn right");
-                        break;
-                    case "forward":
-                        System.out.println("You want to go forward");
-                        break;
-                    case "backward":
-                        System.out.println("You want to go backwards");
-                        break;
+                if (length < 0){
+                    System.out.println("Please enter a positive number");
+                }
+                else {
+                    switch (words[0]) {
+                        case "turnleft":
+                            System.out.println("You want to turn left");
+                            break;
+                        case "turnright":
+                            System.out.println("You want to turn right");
+                            break;
+                        case "forward":
+                            System.out.println("You want to go forward");
+                            break;
+                        case "backward":
+                            System.out.println("You want to go backwards");
+                            break;
+                    }
                 }
             }catch (NumberFormatException e){
                 System.out.println("Not a valid number");
             }
-        }
-        else{
+        } else{
             System.out.println("Please enter a valid command");
         }
     }
