@@ -113,13 +113,13 @@ Turtle/Pen is in the middle of the screen pointing down (5 marks)
 9. [ ] “clear” clears display, turtle stays in the same position (1 mark)
 
 ## Requirement 3 Validating Commands. 10 Marks
--[ ] Reports invalid commands (i.e. something not on the commands list above). (2 marks)
+-[x] Reports invalid commands (i.e. something not on the commands list above). (2 marks)
 
--[ ] Detects valid command with missing parameter. (2 marks)
+-[x] Detects valid command with missing parameter. (2 marks)
 
--[ ] Detects non numeric data for a parameter. (3 marks)
+-[x] Detects non numeric data for a parameter. (3 marks)
 
--[ ] Correctly bounds parameters (i.e. negative or non sensible values are reported as errors). (3
+-[x] Correctly bounds parameters (i.e. negative or non sensible values are reported as errors). (3
 marks)
 
 ## Requirement 4 – loading, saving and exiting. 15 marks
