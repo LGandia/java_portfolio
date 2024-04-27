@@ -16,6 +16,7 @@ public class TurtleGraphics extends OOPGraphics{
         Screen.add(this);                                        //"this" is this object that extends turtle graphics, so we are adding a turtle graphics panel to the frame
         Screen.pack();                                           //set the frame to a size we can see
         Screen.setVisible(true);                                 //now display it
+        penDown();
     }
 
     public void processCommand(String command) {
@@ -54,6 +55,7 @@ public class TurtleGraphics extends OOPGraphics{
 
                 case "reset":
                     reset();
+                    penDown();
                     System.out.println("reset");
                     break;
                 case "clear":
@@ -77,8 +79,8 @@ public class TurtleGraphics extends OOPGraphics{
 
                 if (amount < 0){
                     System.out.println("Please enter a positive number");
-                } else if (amount > 1000) {
-                    System.out.println("Please enter a reasonable value");
+                } else if (amount > 200) {
+                    System.out.println("Please enter a reasonable value between 0 and 200");
                 } else {
                     switch (words[0]) {
                         case "turnleft":
@@ -95,6 +97,8 @@ public class TurtleGraphics extends OOPGraphics{
                         case "backward":
                             System.out.println("You want to go backwards");
                             break;
+                        default:
+                            System.out.println("Invalid command");
                     }
                 }
             }catch (NumberFormatException e){
