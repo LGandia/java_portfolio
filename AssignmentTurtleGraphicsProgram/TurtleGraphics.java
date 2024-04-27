@@ -1,4 +1,4 @@
-import java.awt.FlowLayout;
+import java.awt.*;
 import java.util.Arrays;
 import java.util.Objects;
 import javax.swing.JFrame;
@@ -27,28 +27,38 @@ public class TurtleGraphics extends OOPGraphics{
                     about();
                     break;
                 case "penup":
+                    penUp();
                     System.out.println("penup");
                     break;
                 case "pendown":
+                    penDown();
                     System.out.println("pendown");
                     break;
+
                 case "black":
+                    setPenColour(Color.black);
                     System.out.println("black");
                     break;
                 case "green":
+                    setPenColour(Color.green);
                     System.out.println("green");
                     break;
                 case "red":
+                    setPenColour(Color.red);
                     System.out.println("red");
                     break;
                 case "white":
+                    setPenColour(Color.white);
                     System.out.println("white");
                     break;
+
                 case "reset":
+                    reset();
                     System.out.println("reset");
                     break;
                 case "clear":
                     System.out.println("clear");
+                    clear();
                     break;
 
                 case "turnleft", "turnright", "forward", "backward":
@@ -63,21 +73,24 @@ public class TurtleGraphics extends OOPGraphics{
             System.out.println(Arrays.toString(words));
 
             try {
-                int length = Integer.parseInt(words[1]);
-                if (length < 0){
+                int amount = Integer.parseInt(words[1]);
+
+                if (amount < 0){
                     System.out.println("Please enter a positive number");
-                } else if (length > 1000) {
+                } else if (amount > 1000) {
                     System.out.println("Please enter a reasonable value");
                 } else {
                     switch (words[0]) {
                         case "turnleft":
+                            turnLeft(amount);
                             System.out.println("You want to turn left");
                             break;
                         case "turnright":
+                            turnRight(amount);
                             System.out.println("You want to turn right");
                             break;
                         case "forward":
-                            System.out.println("You want to go forward");
+                            forward(amount);
                             break;
                         case "backward":
                             System.out.println("You want to go backwards");
