@@ -91,9 +91,10 @@ pen should be set to “down”.
 | penup               | Lifts the pen from the canvas, so that movement does not get shown.                              |
 | pendown             | Places the pen down on the canvas so movement gets shown as a drawn line.                        |
 | turnleft <degrees>  | Turn <degrees> to the left                                                                       |
+| turnright <degrees> | Turn <degrees> to the right                                                                      |
 | forward <distance>  | Move forward the specified distance                                                              |
-| backward <distance> | Move forward the specified distance                                                              |
-| black               | Move forward the specified distance                                                              |
+| backward <distance> | Move backward the specified distance                                                             |
+| black               | Sets the output pen colour to black.                                                             |
 | green               | Sets the output pen colour to green.                                                             |
 | red                 | Sets the output pen colour to red.                                                               |
 | white               | Sets the output pen colour to white.                                                             |
