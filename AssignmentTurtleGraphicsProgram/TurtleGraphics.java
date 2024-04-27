@@ -22,36 +22,60 @@ public class TurtleGraphics extends OOPGraphics{
         int countWords = command.split("\\s").length;
         System.out.println(countWords);
 
-        if (Objects.equals(command, "about")){
-            about();
+        if (countWords == 1){
+            switch (command){
+                case "penup":
+                    System.out.println("penup");
+                    break;
+                case "pendown":
+                    System.out.println("pendown");
+                    break;
+                case "black":
+                    System.out.println("black");
+                    break;
+                case "green":
+                    System.out.println("green");
+                    break;
+                case "red":
+                    System.out.println("red");
+                    break;
+                case "white":
+                    System.out.println("white");
+                    break;
+                case "reset":
+                    System.out.println("reset");
+                    break;
+                case "clear":
+                    System.out.println("clear");
+                    break;
+            }
         }
-        //else if (){}
         else if (countWords == 2){
             String[] words = command.split("\\s");
             System.out.println(Arrays.toString(words));
 
             try {
                 int length = Integer.parseInt(words[1]);
+                switch (words[0]) {
+                    case "turnleft":
+                        System.out.println("You want to turn left");
+                        break;
+                    case "turnright":
+                        System.out.println("You want to turn right");
+                        break;
+                    case "forward":
+                        System.out.println("You want to go forward");
+                        break;
+                    case "backward":
+                        System.out.println("You want to go backwards");
+                        break;
+                }
             }catch (NumberFormatException e){
                 System.out.println("Not a valid number");
             }
-            switch (words[0]) {
-                case "turnleft":
-                    System.out.println("You want to turn left");
-                    break;
-                case "turnright":
-                    System.out.println("You want to turn right");
-                    break;
-                case "forward":
-                    System.out.println("You want to go forward");
-                    break;
-                case "backward":
-                    System.out.println("You want to go backwards");
-                    break;
-            }
         }
         else{
-            System.out.println("Please enter a valid command/unit");
+            System.out.println("Please enter a valid command");
         }
     }
 }
