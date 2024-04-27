@@ -23,6 +23,9 @@ public class TurtleGraphics extends OOPGraphics{
 
         if (countWords == 1){
             switch (command){
+                case "about":
+                    about();
+                    break;
                 case "penup":
                     System.out.println("penup");
                     break;
