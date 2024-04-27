@@ -1,6 +1,5 @@
 import java.awt.*;
 import java.util.Arrays;
-import java.util.Objects;
 import javax.swing.JFrame;
 import uk.ac.leedsbeckett.oop.OOPGraphics;
 public class TurtleGraphics extends OOPGraphics{
@@ -95,6 +94,9 @@ public class TurtleGraphics extends OOPGraphics{
                             forward(amount);
                             break;
                         case "backward":
+                            turnRight(180);
+                            forward(amount);
+                            turnRight(180);
                             System.out.println("You want to go backwards");
                             break;
                         default:
