@@ -45,7 +45,7 @@ call the “about()” method in OOPGraphics which will output a simple graphic.
 -[x] Done
 
 You should now make another class called TurtleGraphics.java that uses inheritance to extend
-the OOPGraphics class and it should function as above (note you can go straight to this and
+the OOPGraphics class, and it should function as above (note you can go straight to this and
 still get the marks for the above).
 
 (5 marks)
