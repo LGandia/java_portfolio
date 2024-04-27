@@ -63,8 +63,9 @@ public class TurtleGraphics extends OOPGraphics{
                 int length = Integer.parseInt(words[1]);
                 if (length < 0){
                     System.out.println("Please enter a positive number");
-                }
-                else {
+                } else if (length > 1000) {
+                    System.out.println("Please enter a reasonable value");
+                } else {
                     switch (words[0]) {
                         case "turnleft":
                             System.out.println("You want to turn left");
