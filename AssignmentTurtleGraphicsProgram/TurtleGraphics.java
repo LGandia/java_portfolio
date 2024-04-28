@@ -1,6 +1,11 @@
 import java.awt.*;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 import java.util.Arrays;
-import javax.swing.JFrame;
+import javax.imageio.ImageIO;
+import javax.swing.*;
+
 import uk.ac.leedsbeckett.oop.OOPGraphics;
 public class TurtleGraphics extends OOPGraphics{
     public static void main(String[] args)
@@ -22,7 +27,7 @@ public class TurtleGraphics extends OOPGraphics{
         int countWords = command.split("\\s").length;
 
         if (countWords == 1){
-            switch (command){
+            switch (command) {
                 case "about":
                     about();
                     break;
@@ -31,6 +36,14 @@ public class TurtleGraphics extends OOPGraphics{
                     break;
                 case "save":
                     System.out.println("save");
+                    BufferedImage image = getBufferedImage();
+                    try {
+                        File outputfile = new File("saved.png");
+                        ImageIO.write(image, "png", outputfile);
+                        System.out.println("Image saved successfully.");
+                    } catch (IOException e) {
+                        System.out.println("Error: " + e);
+                    }
                     break;
                 case "reset":
                     reset();
@@ -53,27 +66,27 @@ public class TurtleGraphics extends OOPGraphics{
                     setPenColour(Color.black);
                     System.out.println("black");
                     break;
-                case "green":
-                    setPenColour(Color.green);
-                    System.out.println("green");
-                    break;
-                case "red":
-                    setPenColour(Color.red);
-                    System.out.println("red");
-                    break;
-                case "white":
-                    setPenColour(Color.white);
-                    System.out.println("white");
-                    break;
+               case "green":
+                   setPenColour(Color.green);
+                   System.out.println("green");
+                   break;
+               case "red":
+                   setPenColour(Color.red);
+                   System.out.println("red");
+                   break;
+               case "white":
+                   setPenColour(Color.white);
+                   System.out.println("white");
+                   break;
 
-                case "turnleft", "turnright", "forward", "backward":
-                    System.out.println("Please enter a parameter");
-                    break;
+               case "turnleft", "turnright", "forward", "backward":
+                   System.out.println("Please enter a parameter");
+                   break;
 
-                default:
-                    System.out.println("Invalid command");
+               default:
+                   System.out.println("Invalid command");
             }
-        } else if (countWords == 2){
+        }else if (countWords == 2){
             String[] words = command.split("\\s");
             System.out.println(Arrays.toString(words));
 
