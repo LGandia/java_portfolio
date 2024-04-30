@@ -42,6 +42,12 @@ public class TurtleGraphics extends OOPGraphics{
 
                     try {
                         File outputfile = new File(imageName+".png");
+
+                        while (outputfile.exists()){
+                            JOptionPane.showMessageDialog(null,imageName + " already exists");
+                            imageName = JOptionPane.showInputDialog(null,"Please enter a new name: ");
+                            outputfile = new File(imageName+".png");
+                        }
                         ImageIO.write(image, "png", outputfile);
                         JOptionPane.showMessageDialog(null,"Image saved successfully.");
                         saved = true;
