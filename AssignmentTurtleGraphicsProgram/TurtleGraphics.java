@@ -25,6 +25,7 @@ public class TurtleGraphics extends OOPGraphics{
 
     public void processCommand(String command) {
         int countWords = command.split("\\s").length;
+        boolean saved = false;
 
         if (countWords == 1){
             switch (command) {
@@ -37,10 +38,13 @@ public class TurtleGraphics extends OOPGraphics{
                 case "save":
                     System.out.println("save");
                     BufferedImage image = getBufferedImage();
+                    String imageName = JOptionPane.showInputDialog(null,"Enter name to save: ");
+
                     try {
-                        File outputfile = new File("saved.png");
+                        File outputfile = new File(imageName+".png");
                         ImageIO.write(image, "png", outputfile);
-                        System.out.println("Image saved successfully.");
+                        JOptionPane.showMessageDialog(null,"Image saved successfully.");
+                        saved = true;
                     } catch (IOException e) {
                         System.out.println("Error: " + e);
                     }
