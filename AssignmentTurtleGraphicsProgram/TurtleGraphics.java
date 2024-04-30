@@ -44,15 +44,21 @@ public class TurtleGraphics extends OOPGraphics{
                         File outputfile = new File(imageName+".png");
 
                         while (outputfile.exists()){
-                            JOptionPane.showMessageDialog(null,imageName + " already exists");
-                            imageName = JOptionPane.showInputDialog(null,"Please enter a new name: ");
-                            outputfile = new File(imageName+".png");
+                            int response = JOptionPane.showConfirmDialog(null, "The image file " + imageName +
+                                    " already exists. Do you want to overwrite it?", "Confirm", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+                            //JOptionPane.showMessageDialog(null,imageName + " already exists");
+                            if (response == JOptionPane.YES_OPTION){
+                                break;
+                            }else {
+                                imageName = JOptionPane.showInputDialog(null, "Please enter a new name: ");
+                                outputfile = new File(imageName + ".png");
+                            }
                         }
                         ImageIO.write(image, "png", outputfile);
                         JOptionPane.showMessageDialog(null,"Image saved successfully.");
                         saved = true;
                     } catch (IOException e) {
-                        System.out.println("Error: " + e);
+                        JOptionPane.showMessageDialog(null,"Error: " + e);
                     }
                     break;
                 case "reset":
@@ -90,11 +96,11 @@ public class TurtleGraphics extends OOPGraphics{
                    break;
 
                case "turnleft", "turnright", "forward", "backward":
-                   System.out.println("Please enter a parameter");
+                   JOptionPane.showMessageDialog(null,"Error. Please enter a parameter");
                    break;
 
                default:
-                   System.out.println("Invalid command");
+                   JOptionPane.showMessageDialog(null,"Invalid command");
             }
         }else if (countWords == 2){
             String[] words = command.split("\\s");
@@ -104,9 +110,9 @@ public class TurtleGraphics extends OOPGraphics{
                 int amount = Integer.parseInt(words[1]);
 
                 if (amount < 0){
-                    System.out.println("Please enter a positive number");
+                    JOptionPane.showMessageDialog(null,"Error. Please enter a positive number");
                 } else if (amount > 200) {
-                    System.out.println("Please enter a reasonable value between 0 and 200");
+                    JOptionPane.showMessageDialog(null,"Error. Please enter a reasonable value between 0 and 200");
                 } else {
                     switch (words[0]) {
                         case "turnleft":
@@ -121,9 +127,7 @@ public class TurtleGraphics extends OOPGraphics{
                             forward(amount);
                             break;
                         case "backward":
-                            turnRight(180);
-                            forward(amount);
-                            turnRight(180);
+                            forward(-amount);
                             System.out.println("You want to go backwards");
                             break;
                         default:
@@ -131,10 +135,10 @@ public class TurtleGraphics extends OOPGraphics{
                     }
                 }
             }catch (NumberFormatException e){
-                System.out.println("Not a valid number");
+                JOptionPane.showMessageDialog(null,"Not a valid number");
             }
         } else{
-            System.out.println("Please enter a valid command");
+            JOptionPane.showMessageDialog(null,"Please enter a valid command");
         }
     }
 }
