@@ -4,6 +4,7 @@ import java.awt.event.WindowEvent;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
 import javax.imageio.ImageIO;
 import javax.swing.*;
@@ -11,6 +12,7 @@ import javax.swing.*;
 import uk.ac.leedsbeckett.oop.OOPGraphics;
 public class TurtleGraphics extends OOPGraphics{
     public static boolean saved = false;
+    public static ArrayList<String> commandsList = new ArrayList<String>();
     public static void main(String[] args)
     {
         new TurtleGraphics();
@@ -49,7 +51,7 @@ public class TurtleGraphics extends OOPGraphics{
     }
 
     public void processCommand(String command) {
-        System.out.println(saved);
+        System.out.println(commandsList);
         int countWords = command.split("\\s").length;
 
         if (countWords == 1){
@@ -57,6 +59,7 @@ public class TurtleGraphics extends OOPGraphics{
                 case "about":
                     about();
                     saved = false;
+                    commandsList.add(command);
                     break;
                 case "load":
                     System.out.println("load");
@@ -111,30 +114,33 @@ public class TurtleGraphics extends OOPGraphics{
                     System.out.println("pendown");
                     break;
 
-
                 case "black":
                     setPenColour(Color.black);
+                    commandsList.add(command);
                     saved = false;
                     break;
-               case "green":
-                   setPenColour(Color.green);
-                   saved = false;
-                   break;
-               case "red":
-                   setPenColour(Color.red);
-                   saved = false;
-                   break;
-               case "white":
-                   setPenColour(Color.white);
-                   saved = false;
-                   break;
+                case "green":
+                    setPenColour(Color.green);
+                    commandsList.add(command);
+                    saved = false;
+                    break;
+                case "red":
+                    setPenColour(Color.red);
+                    commandsList.add(command);
+                    saved = false;
+                    break;
+                case "white":
+                    setPenColour(Color.white);
+                    commandsList.add(command);
+                    saved = false;
+                    break;
 
-               case "turnleft", "turnright", "forward", "backward":
-                   JOptionPane.showMessageDialog(null,"Error. Please enter a parameter");
-                   break;
+                case "turnleft", "turnright", "forward", "backward":
+                    JOptionPane.showMessageDialog(null,"Error. Please enter a parameter");
+                    break;
 
-               default:
-                   JOptionPane.showMessageDialog(null,"Invalid command");
+                default:
+                    JOptionPane.showMessageDialog(null,"Invalid command");
             }
         }else if (countWords == 2){
             String[] words = command.split("\\s");
@@ -151,18 +157,22 @@ public class TurtleGraphics extends OOPGraphics{
                     switch (words[0]) {
                         case "turnleft":
                             turnLeft(amount);
+                            commandsList.add(command);
                             saved = false;
                             break;
                         case "turnright":
                             turnRight(amount);
+                            commandsList.add(command);
                             saved = false;
                             break;
                         case "forward":
                             forward(amount);
+                            commandsList.add(command);
                             saved = false;
                             break;
                         case "backward":
                             forward(-amount);
+                            commandsList.add(command);
                             saved = false;
                             break;
                         default:
