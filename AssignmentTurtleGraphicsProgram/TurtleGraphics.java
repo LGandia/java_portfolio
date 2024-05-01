@@ -2,8 +2,7 @@ import java.awt.*;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.IOException;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.Arrays;
 import javax.imageio.ImageIO;
@@ -12,6 +11,7 @@ import javax.swing.*;
 import uk.ac.leedsbeckett.oop.OOPGraphics;
 public class TurtleGraphics extends OOPGraphics{
     public static boolean saved = false;
+    public static boolean fileLoaded = false;
     public static ArrayList<String> commandsList = new ArrayList<>();
     public static void main(String[] args)
     {
@@ -68,23 +68,34 @@ public class TurtleGraphics extends OOPGraphics{
                 case "save":
                     System.out.println("save");
                     BufferedImage image = getBufferedImage();
-                    String imageName = JOptionPane.showInputDialog(null,"Enter name to save: ");
+                    String fileName = JOptionPane.showInputDialog(null,"Enter name to save: ");
 
                     try {
-                        File outputfile = new File(imageName+".png");
+                        File imageFile = new File(fileName+".png");
+                        File commandFile = new File(fileName+".txt");
 
-                        while (outputfile.exists()){
-                            int response = JOptionPane.showConfirmDialog(null, "The image file " + imageName +
+                        while (imageFile.exists()|| commandFile.exists()){
+                            int response = JOptionPane.showConfirmDialog(null, "The image file or command file " + fileName +
                                     " already exists. Do you want to overwrite it?", "Confirm", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
                             if (response == JOptionPane.YES_OPTION){
                                 break;
                             }else {
-                                imageName = JOptionPane.showInputDialog(null, "Please enter a new name: ");
-                                outputfile = new File(imageName + ".png");
+                                fileName = JOptionPane.showInputDialog(null, "Please enter a new name: ");
+                                imageFile = new File(fileName + ".png");
+                                commandFile = new File(fileName+".txt");
                             }
                         }
-                        ImageIO.write(image, "png", outputfile);
-                        JOptionPane.showMessageDialog(null,"Image saved successfully.");
+                        ImageIO.write(image, "png", imageFile);
+
+                        try (PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter(commandFile)))) {
+                            for (String line : commandsList) {
+                                out.println(line);
+                            }
+                        } catch (IOException e) {
+                            JOptionPane.showMessageDialog(null,"Unable to write file.");
+                        }
+
+                        JOptionPane.showMessageDialog(null,"Image and commands saved successfully.");
                         saved = true;
                     } catch (IOException e) {
                         JOptionPane.showMessageDialog(null,"Error: " + e);
