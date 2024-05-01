@@ -12,7 +12,7 @@ import javax.swing.*;
 import uk.ac.leedsbeckett.oop.OOPGraphics;
 public class TurtleGraphics extends OOPGraphics{
     public static boolean saved = false;
-    public static ArrayList<String> commandsList = new ArrayList<String>();
+    public static ArrayList<String> commandsList = new ArrayList<>();
     public static void main(String[] args)
     {
         new TurtleGraphics();
@@ -60,6 +60,7 @@ public class TurtleGraphics extends OOPGraphics{
                     about();
                     saved = false;
                     commandsList.add(command);
+                    System.out.println(command);
                     break;
                 case "load":
                     System.out.println("load");
@@ -91,12 +92,15 @@ public class TurtleGraphics extends OOPGraphics{
                     break;
                 case "reset":
                     reset();
+                    commandsList.add(command);
+                    System.out.println(command);
                     break;
                 case "clear":
                     if(!saved){
                         int response = JOptionPane.showConfirmDialog(null, "You have not saved your image. " +
                                 "Do you wish to reset without saving?", "Confirm", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
                         if (response == JOptionPane.YES_OPTION){
+                            commandsList.clear();
                             clear();
                             break;
                         }else {
@@ -107,16 +111,19 @@ public class TurtleGraphics extends OOPGraphics{
 
                 case "penup":
                     penUp();
-                    System.out.println("penup");
+                    commandsList.add(command);
+                    System.out.println(command);
                     break;
                 case "pendown":
                     penDown();
-                    System.out.println("pendown");
+                    commandsList.add(command);
+                    System.out.println(command);
                     break;
 
                 case "black":
                     setPenColour(Color.black);
                     commandsList.add(command);
+                    System.out.println(command);
                     saved = false;
                     break;
                 case "green":
@@ -158,21 +165,25 @@ public class TurtleGraphics extends OOPGraphics{
                         case "turnleft":
                             turnLeft(amount);
                             commandsList.add(command);
+                            System.out.println(command);
                             saved = false;
                             break;
                         case "turnright":
                             turnRight(amount);
                             commandsList.add(command);
+                            System.out.println(command);
                             saved = false;
                             break;
                         case "forward":
                             forward(amount);
                             commandsList.add(command);
+                            System.out.println(command);
                             saved = false;
                             break;
                         case "backward":
                             forward(-amount);
                             commandsList.add(command);
+                            System.out.println(command);
                             saved = false;
                             break;
                         default:
