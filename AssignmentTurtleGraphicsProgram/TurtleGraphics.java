@@ -63,6 +63,8 @@ public class TurtleGraphics extends OOPGraphics{
                     break;
                 case "load":
                     System.out.println("load");
+                    String savedFile = JOptionPane.showInputDialog(null,"Enter name of image you wish to load: ") + ".png";
+                    // image.IO BufferedImage loadedImage = setBufferedImage(savedFile);
                     break;
                 case "save":
                     System.out.println("save");
