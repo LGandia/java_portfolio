@@ -51,7 +51,6 @@ public class TurtleGraphics extends OOPGraphics{
     }
 
     public void processCommand(String command) {
-        System.out.println(commandsList);
         int countWords = command.split("\\s").length;
 
         if (countWords == 1){
