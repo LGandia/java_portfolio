@@ -76,6 +76,7 @@ public class TurtleGraphics extends OOPGraphics{
                     BufferedImage image = getBufferedImage();
                     String fileName = JOptionPane.showInputDialog(null,"Enter name to save: ");
 
+                    //0if (fileLoaded = true){}
                     try {
                         File imageFile = new File(fileName+".png");
                         File commandFile = new File(fileName+".txt");
