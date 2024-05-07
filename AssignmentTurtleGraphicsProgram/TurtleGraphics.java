@@ -66,14 +66,13 @@ public class TurtleGraphics extends OOPGraphics{
                     System.out.println("load");
                     File savedFile = new File(JOptionPane.showInputDialog(null,"Enter name of image you wish to load: "));
                     loadedName = String.valueOf(savedFile);
-
-                    String imagePath = loadedName + ".png";
-                    String commandPath = loadedName+".txt";
+                    File imagePath = new File(loadedName +".png");
+                    File commandPath = new File(loadedName+".txt");
                     System.out.println(loadedName);
 
-                    if (savedFile.exists()) {
+                    if (imagePath.exists()) {
                         try {
-                            BufferedImage loadedImage = ImageIO.read(new File(imagePath));
+                            BufferedImage loadedImage = ImageIO.read(new File(String.valueOf(imagePath)));
                             setBufferedImage(loadedImage);
                             loaded = true;
                         } catch (IOException e) {
@@ -84,6 +83,8 @@ public class TurtleGraphics extends OOPGraphics{
                         try (BufferedReader br = new BufferedReader(new FileReader(commandPath))) {
                             String line;
                             while ((line = br.readLine()) != null) {
+                                System.out.println(line);
+                                processCommand(line);
                                 commandsList.add(line);
                             }
                             JOptionPane.showMessageDialog(null, "Image and commands loaded successfully.");
