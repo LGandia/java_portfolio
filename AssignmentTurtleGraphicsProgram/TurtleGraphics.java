@@ -153,6 +153,8 @@ public class TurtleGraphics extends OOPGraphics{
                         }else {
                             processCommand("save");
                         }
+                    }else {
+                        clear();
                     }
                     break;
 
