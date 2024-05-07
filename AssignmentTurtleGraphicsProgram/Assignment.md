@@ -131,9 +131,9 @@ the system and drawing recommenced.
 first then a warning should be shown to the user, which should provide the opportunity 
 for the current image to be saved first. 
 - [x] Save Image (to suitable image graphics format such as png or jpeg). (2 Marks)
-- [ ] Load Image and redisplayed on the display. (2 marks)
+- [x] Load Image and redisplayed on the display. (2 marks)
 - [x] Saves all commands previously typed as a text file. (2 marks)
-- [ ] Loads a text file of commands and executes them. (5 marks)
+- [x] Loads a text file of commands and executes them. (5 marks)
 - [x] Warning if the current image/commands is not saved. (2 marks)
 - [x] Use of GUI dialogues. (2 marks)
 
