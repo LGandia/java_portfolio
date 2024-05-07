@@ -11,7 +11,8 @@ import javax.swing.*;
 import uk.ac.leedsbeckett.oop.OOPGraphics;
 public class TurtleGraphics extends OOPGraphics{
     public static boolean saved = false;
-    public static boolean fileLoaded = false;
+    public static boolean loaded = false;
+    public static String loadedName;
     public static ArrayList<String> commandsList = new ArrayList<>();
     public static void main(String[] args)
     {
@@ -63,20 +64,57 @@ public class TurtleGraphics extends OOPGraphics{
                     break;
                 case "load":
                     System.out.println("load");
-                    File savedFile = new File(JOptionPane.showInputDialog(null,"Enter name of image you wish to load: ") + ".png");
-                    try {
-                        BufferedImage loadedImage = ImageIO.read(savedFile);
-                        fileLoaded = true;
-                    } catch (IOException e) {
-                        throw new RuntimeException(e);
+                    File savedFile = new File(JOptionPane.showInputDialog(null,"Enter name of image you wish to load: "));
+                    loadedName = String.valueOf(savedFile);
+
+                    String imagePath = loadedName + ".png";
+                    String commandPath = loadedName+".txt";
+                    System.out.println(loadedName);
+
+                    if (savedFile.exists()) {
+                        try {
+                            BufferedImage loadedImage = ImageIO.read(new File(imagePath));
+                            setBufferedImage(loadedImage);
+                            loaded = true;
+                        } catch (IOException e) {
+                            JOptionPane.showMessageDialog(null,"Unable to load image");
+                            throw new RuntimeException(e);
+                        }
+
+                        try (BufferedReader br = new BufferedReader(new FileReader(commandPath))) {
+                            String line;
+                            while ((line = br.readLine()) != null) {
+                                commandsList.add(line);
+                            }
+                            JOptionPane.showMessageDialog(null, "Image and commands loaded successfully.");
+                        } catch (IOException e) {
+                            throw new RuntimeException(e);
+                        }
+                    }else {
+                        JOptionPane.showMessageDialog(null,"Image or command file does not exist.");
                     }
                     break;
                 case "save":
                     System.out.println("save");
                     BufferedImage image = getBufferedImage();
-                    String fileName = JOptionPane.showInputDialog(null,"Enter name to save: ");
 
-                    //0if (fileLoaded = true){}
+                    if (loaded) {
+                        int response = JOptionPane.showConfirmDialog(null, "Do you wish to overwrite" + loadedName + " and associated commands?",
+                                "Confirm", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+                        if (response == JOptionPane.YES_OPTION) {
+                            File imageFile = new File(loadedName+".png");
+                            File commandFile = new File(loadedName+".txt");
+                            try {
+                                ImageIO.write(image, "png", imageFile);
+                            } catch (IOException e) {
+                                throw new RuntimeException(e);
+                            }
+
+                            saving(commandFile);
+                            break;
+                        }
+                    }
+                    String fileName = JOptionPane.showInputDialog(null,"Enter name to save: ");
                     try {
                         File imageFile = new File(fileName+".png");
                         File commandFile = new File(fileName+".txt");
@@ -94,16 +132,7 @@ public class TurtleGraphics extends OOPGraphics{
                         }
                         ImageIO.write(image, "png", imageFile);
 
-                        try (PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter(commandFile)))) {
-                            for (String line : commandsList) {
-                                out.println(line);
-                            }
-                        } catch (IOException e) {
-                            JOptionPane.showMessageDialog(null,"Unable to write file.");
-                        }
-
-                        JOptionPane.showMessageDialog(null,"Image and commands saved successfully.");
-                        saved = true;
+                        saving(commandFile);
                     } catch (IOException e) {
                         JOptionPane.showMessageDialog(null,"Error: " + e);
                     }
@@ -214,5 +243,18 @@ public class TurtleGraphics extends OOPGraphics{
         } else{
             JOptionPane.showMessageDialog(null,"Please enter a valid command");
         }
+    }
+
+    private void saving(File commandFile) {
+        try (PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter(commandFile)))) {
+            for (String line : commandsList) {
+                out.println(line);
+            }
+        } catch (IOException e) {
+            JOptionPane.showMessageDialog(null,"Unable to write file.");
+        }
+
+        JOptionPane.showMessageDialog(null,"Image and commands saved successfully.");
+        saved = true;
     }
 }
