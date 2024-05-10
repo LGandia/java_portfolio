@@ -68,7 +68,6 @@ public class TurtleGraphics extends OOPGraphics{
                     loadedName = String.valueOf(savedFile);
                     File imagePath = new File(loadedName +".png");
                     File commandPath = new File(loadedName+".txt");
-                    System.out.println(loadedName);
 
                     if (imagePath.exists()) {
                         try {
@@ -108,6 +107,7 @@ public class TurtleGraphics extends OOPGraphics{
                             try {
                                 ImageIO.write(image, "png", imageFile);
                             } catch (IOException e) {
+                                JOptionPane.showMessageDialog(null,"Unable to load requested image");
                                 throw new RuntimeException(e);
                             }
 
@@ -149,6 +149,7 @@ public class TurtleGraphics extends OOPGraphics{
                                 "Do you wish to reset without saving?", "Confirm", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
                         if (response == JOptionPane.YES_OPTION){
                             commandsList.clear();
+                            reset();
                             clear();
                             break;
                         }else {
