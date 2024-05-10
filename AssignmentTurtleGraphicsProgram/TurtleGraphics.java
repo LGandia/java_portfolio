@@ -140,6 +140,7 @@ public class TurtleGraphics extends OOPGraphics{
                     break;
                 case "reset":
                     reset();
+                    penDown();
                     commandsList.add(command);
                     System.out.println(command);
                     break;
