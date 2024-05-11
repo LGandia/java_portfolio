@@ -9,17 +9,20 @@ import javax.imageio.ImageIO;
 import javax.swing.*;
 
 import uk.ac.leedsbeckett.oop.OOPGraphics;
+
 public class TurtleGraphics extends OOPGraphics{
+
     public static boolean saved = false;
     public static boolean loaded = false;
     public static String loadedName;
     public static ArrayList<String> commandsList = new ArrayList<>();
+    private final JFrame Screen;
     public static void main(String[] args)
     {
         new TurtleGraphics();
     }
     public TurtleGraphics() {
-        JFrame Screen = new JFrame();
+        Screen = new JFrame();
         Screen.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         Screen.setLayout(new FlowLayout());
         Screen.add(this);
@@ -28,6 +31,7 @@ public class TurtleGraphics extends OOPGraphics{
         penDown();
 
         Screen.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+
         Screen.addWindowListener(new WindowAdapter() {
             @Override
             public void windowClosing(WindowEvent e) {
@@ -50,10 +54,17 @@ public class TurtleGraphics extends OOPGraphics{
             }
         });
     }
-
+    //@Override
+    //public void about(){
+    //    super.about();
+    //    Graphics g = Screen.getGraphics();
+    //    g.setColor(Color.WHITE);
+    //    g.setFont(new Font("Arial", Font.BOLD, 40));
+    //    g.drawString("Laura Gandia",150,325);
+    //}
     public void processCommand(String command) {
-        int countWords = command.split("\\s").length;
 
+        int countWords = command.split("\\s").length;
         if (countWords == 1){
             switch (command) {
                 case "about":
