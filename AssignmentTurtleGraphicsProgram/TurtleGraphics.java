@@ -17,6 +17,7 @@ public class TurtleGraphics extends OOPGraphics{
     public static String loadedName;
     public static ArrayList<String> commandsList = new ArrayList<>();
     private final JFrame Screen;
+
     public static void main(String[] args)
     {
         new TurtleGraphics();
@@ -29,7 +30,6 @@ public class TurtleGraphics extends OOPGraphics{
         Screen.pack();
         Screen.setVisible(true);
         penDown();
-
         Screen.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
 
         Screen.addWindowListener(new WindowAdapter() {
@@ -54,14 +54,24 @@ public class TurtleGraphics extends OOPGraphics{
             }
         });
     }
-    //@Override
-    //public void about(){
-    //    super.about();
-    //    Graphics g = Screen.getGraphics();
-    //    g.setColor(Color.WHITE);
-    //    g.setFont(new Font("Arial", Font.BOLD, 40));
-    //    g.drawString("Laura Gandia",150,325);
-    //}
+    private boolean showAbout = false;
+
+    @Override
+    public void paintComponent(Graphics g) {
+        super.paintComponent(g);
+        if (showAbout) {
+            g.setColor(Color.WHITE);
+            g.setFont(new Font("Arial", Font.BOLD, 40));
+            g.drawString("Laura Gandia", 150, 325);
+        }
+    }
+    @Override
+    public void about() {
+        super.about();
+        showAbout = true;
+        repaint();
+    }
+
     public void processCommand(String command) {
 
         int countWords = command.split("\\s").length;
@@ -161,6 +171,7 @@ public class TurtleGraphics extends OOPGraphics{
                                 "Do you wish to reset without saving?", "Confirm", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
                         if (response == JOptionPane.YES_OPTION){
                             commandsList.clear();
+                            showAbout = false;
                             reset();
                             clear();
                             break;
@@ -168,6 +179,7 @@ public class TurtleGraphics extends OOPGraphics{
                             processCommand("save");
                         }
                     }else {
+                        showAbout = false;
                         clear();
                     }
                     break;
@@ -273,4 +285,5 @@ public class TurtleGraphics extends OOPGraphics{
         JOptionPane.showMessageDialog(null,"Image and commands saved successfully.");
         saved = true;
     }
+
 }
