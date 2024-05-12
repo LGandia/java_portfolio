@@ -1,4 +1,4 @@
-/*
+
 public class MainClass extends TurtleGraphics
 {
     public static void main(String[] args)
@@ -6,7 +6,7 @@ public class MainClass extends TurtleGraphics
         new TurtleGraphics();
     }
 }
-*/
+
 /*
 import java.awt.FlowLayout;
 import javax.swing.JFrame;

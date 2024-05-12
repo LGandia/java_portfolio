@@ -1,0 +1,9 @@
+reset
+reset
+turnright 45
+turnright 45
+forward 100
+forward 100
+reset
+reset
+backward 100

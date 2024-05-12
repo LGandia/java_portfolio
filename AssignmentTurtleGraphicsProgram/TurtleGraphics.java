@@ -86,7 +86,6 @@ public class TurtleGraphics extends OOPGraphics{
                         try (BufferedReader br = new BufferedReader(new FileReader(commandPath))) {
                             String line;
                             while ((line = br.readLine()) != null) {
-                                System.out.println(line);
                                 processCommand(line);
                                 commandsList.add(line);
                             }
@@ -156,7 +155,6 @@ public class TurtleGraphics extends OOPGraphics{
                         if (response == JOptionPane.YES_OPTION){
                             commandsList.clear();
                             showAbout = false;
-                            reset();
                             setPenColour(Color.red);
                             clear();
                             break;
@@ -184,22 +182,26 @@ public class TurtleGraphics extends OOPGraphics{
                     setPenColour(Color.black);
                     commandsList.add(command);
                     System.out.println(command);
-                    saved = false;
                     break;
                 case "green":
                     setPenColour(Color.green);
                     commandsList.add(command);
-                    saved = false;
+                    System.out.println(command);
                     break;
                 case "red":
                     setPenColour(Color.red);
                     commandsList.add(command);
-                    saved = false;
+                    System.out.println(command);
                     break;
                 case "white":
                     setPenColour(Color.white);
                     commandsList.add(command);
-                    saved = false;
+                    System.out.println(command);
+                    break;
+                case "blue":
+                    setPenColour(Color.blue);
+                    commandsList.add(command);
+                    System.out.println(command);
                     break;
 
                 case "turnleft", "turnright", "forward", "backward","square","triangle":
@@ -225,13 +227,11 @@ public class TurtleGraphics extends OOPGraphics{
                             turnLeft(amount);
                             commandsList.add(command);
                             System.out.println(command);
-                            saved = false;
                             break;
                         case "turnright":
                             turnRight(amount);
                             commandsList.add(command);
                             System.out.println(command);
-                            saved = false;
                             break;
                         case "forward":
                             forward(amount);
@@ -261,7 +261,6 @@ public class TurtleGraphics extends OOPGraphics{
                             penwidth(amount);
                             commandsList.add(command);
                             System.out.println(command);
-                            saved = false;
                             break;
                         default:
                             JOptionPane.showMessageDialog(null,"Invalid command");
@@ -277,8 +276,8 @@ public class TurtleGraphics extends OOPGraphics{
                 if (num < 0) {
                     JOptionPane.showMessageDialog(null, "Error. Please enter a positive values");
                     break;
-                } else if (words[0].equals("pencolour") && num > 256) {
-                    JOptionPane.showMessageDialog(null, "Error. Please enter a reasonable value between 0 and 256");
+                } else if (words[0].equals("pencolour") && num > 255) {
+                    JOptionPane.showMessageDialog(null, "Error. Please enter a reasonable value between 0 and 255");
                     break;
                 } else {
                     validValues = true;
