@@ -289,13 +289,21 @@ public class TurtleGraphics extends OOPGraphics{
         repaint();
     }
     private void square(int len){
-        System.out.println(getPenColour());
         int x1 = getxPos();
         int y1 = getyPos();
-        System.out.println(x1+","+y1);
-        int x2 = getxPos() - len;
-        int y2 = getyPos() - len;
-        System.out.println(x2+","+y2);
-        drawLine(getPenColour(), getxPos(),getyPos(),x2,y2);
+
+        int x2 = getxPos() + len;
+        int y2 = getyPos() + len;
+
+        int x3 = x2 + len;
+        System.out.println(x3);
+        int y3 = y2 + len;
+        System.out.println(y3);
+
+        drawLine(getPenColour(),x1,y1,x1,y2);
+        drawLine(getPenColour(),x1,y1,x2,y1);
+        drawLine(getPenColour(),x2,y1,x2,y2);
+        drawLine(getPenColour(),x2,y2,x1,y2);
+        repaint();
     }
 }
