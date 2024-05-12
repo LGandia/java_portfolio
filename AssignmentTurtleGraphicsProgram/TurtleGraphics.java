@@ -4,7 +4,7 @@ import java.awt.event.WindowEvent;
 import java.awt.image.BufferedImage;
 import java.io.*;
 import java.util.ArrayList;
-import java.util.Arrays;
+import java.util.Objects;
 import javax.imageio.ImageIO;
 import javax.swing.*;
 
@@ -58,6 +58,7 @@ public class TurtleGraphics extends OOPGraphics{
     public void processCommand(String command) {
 
         int countWords = command.split("\\s").length;
+        String[] words = command.split("\\s");
         if (countWords == 1){
             switch (command) {
                 case "about":
@@ -208,7 +209,6 @@ public class TurtleGraphics extends OOPGraphics{
                     JOptionPane.showMessageDialog(null,"Invalid command");
             }
         }else if (countWords == 2){
-            String[] words = command.split("\\s");
             try {
                 int amount = Integer.parseInt(words[1]);
 
@@ -255,6 +255,31 @@ public class TurtleGraphics extends OOPGraphics{
             }catch (NumberFormatException e){
                 JOptionPane.showMessageDialog(null,"Not a valid number");
             }
+        } else if (countWords == 4) {
+            boolean validValues = false;
+            if (Objects.equals(words[0], "pencolour")){
+                for (int i = 1; i < words.length; i++) {
+                    int colNum = Integer.parseInt(words[i]);
+                    if (colNum < 0) {
+                        JOptionPane.showMessageDialog(null, "Error. Please enter a positive values");
+                        break;
+                    }else if (colNum > 256) {
+                        JOptionPane.showMessageDialog(null, "Error. Please enter a reasonable value between 0 and 256");
+                        break;
+                    }else{
+                        validValues = true;
+                    }
+                }if(validValues) {
+                    int red = Integer.parseInt(words[1]);
+                    int green = Integer.parseInt(words[2]);
+                    int blue = Integer.parseInt(words[3]);
+
+                    pencolour(red,green,blue);
+                    commandsList.add(command);
+                    System.out.println(command);
+                    saved = false;
+                }
+            }
         } else{
             JOptionPane.showMessageDialog(null,"Please enter a valid command");
         }
@@ -300,5 +325,8 @@ public class TurtleGraphics extends OOPGraphics{
         drawLine(getPenColour(),x2,y1,x2,y2);
         drawLine(getPenColour(),x2,y2,x1,y2);
         repaint();
+    }
+    private void pencolour(int r, int g,int b){
+        setPenColour(new Color(r,g,b));
     }
 }
