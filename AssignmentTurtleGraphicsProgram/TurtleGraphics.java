@@ -265,11 +265,11 @@ public class TurtleGraphics extends OOPGraphics{
         } else if (countWords == 4) {
             boolean validValues = false;
             for (int i = 1; i < words.length; i++) {
-                int colNum = Integer.parseInt(words[i]);
-                if (colNum < 0) {
+                int num = Integer.parseInt(words[i]);
+                if (num < 0) {
                     JOptionPane.showMessageDialog(null, "Error. Please enter a positive values");
                     break;
-                } else if (colNum > 256) {
+                } else if (words[0].equals("pencolour") && num > 256) {
                     JOptionPane.showMessageDialog(null, "Error. Please enter a reasonable value between 0 and 256");
                     break;
                 } else {
@@ -288,10 +288,14 @@ public class TurtleGraphics extends OOPGraphics{
                         System.out.println(command);
                         saved = false;
                     case "triangle":
-                        triangle(num1, num2, num3);
-                        commandsList.add(command);
-                        System.out.println(command);
-                        saved = false;
+                        if (num1 + num2 <= num3 || num1 + num3 <= num2 || num2 + num3 <= num1) {
+                            JOptionPane.showMessageDialog(null,"The lengths given do not form a valid triangle");
+                        }else {
+                            triangle(num1, num2, num3);
+                            commandsList.add(command);
+                            System.out.println(command);
+                            saved = false;
+                        }
                 }
             }
         } else{
@@ -354,21 +358,21 @@ public class TurtleGraphics extends OOPGraphics{
         repaint();
     }
     private void triangle(int len1, int len2, int len3){
-        if (len1 + len2 <= len3 || len1 + len3 <= len2 || len2 + len3 <= len1) {
-            JOptionPane.showMessageDialog(null,"The lengths given do not form a valid triangle");
-        }else {
-            int x1 = getxPos(), y1 = getyPos();
-            int x2 = getxPos() + len1;
 
-            int x3 = (int) (x1 + len2 * Math.cos(Math.toRadians(60)));
-            int y3 = (int) (y1 + len2 * Math.sin(Math.toRadians(60)));
+        double angle3 = Math.acos((Math.pow(len1, 2) + Math.pow(len2, 2) - Math.pow(len3, 2)) / (2.0 * len1 * len2));
 
-            drawLine(getPenColour(),x1,y1,x2, y1);
-            drawLine(getPenColour(),x2, y1,x3,y3);
-            drawLine(getPenColour(),x3,y3,x1,y1);
-            repaint();
-        }
+        int x1 = getxPos(), y1 = getyPos();
+        int x2 = getxPos() + len1;
+
+        int x3 = (int)(x1 + len2 * Math.cos(angle3));
+        int y3 = (int)(y1 + len2 * Math.sin(angle3));
+
+        drawLine(getPenColour(),x1,y1,x2, y1);
+        drawLine(getPenColour(),x2,y1,x3,y3);
+        drawLine(getPenColour(),x3,y3,x1,y1);
+        repaint();
     }
+
     private void pencolour(int r, int g,int b){
         setPenColour(new Color(r,g,b));
     }
