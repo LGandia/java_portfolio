@@ -151,7 +151,7 @@ on the button or text field. You can do much more with inheritance, however.
 You can add new methods, and you can replace existing methods.
 
 All of the following should be implemented as methods in your code but also as commands that the user can type at run time.
--[ ] Override the about() method so that it still does the same “dance” but appends a message
+-[x] Override the about() method so that it still does the same “dance” but appends a message
 that contains your name.
 about
    (4 marks)
