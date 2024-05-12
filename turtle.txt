@@ -1,0 +1,2 @@
+triangle 85
+square 200

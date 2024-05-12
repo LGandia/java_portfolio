@@ -18,7 +18,7 @@ public class TurtleGraphics extends OOPGraphics{
 
     public static void main(String[] args)
     {
-        new MainClass();
+        new TurtleGraphics();
     }
 
     public TurtleGraphics() {
@@ -157,6 +157,7 @@ public class TurtleGraphics extends OOPGraphics{
                             commandsList.clear();
                             showAbout = false;
                             reset();
+                            setPenColour(Color.red);
                             clear();
                             break;
                         }else {
@@ -214,8 +215,10 @@ public class TurtleGraphics extends OOPGraphics{
 
                 if (amount < 0){
                     JOptionPane.showMessageDialog(null,"Error. Please enter a positive number");
-                } else if (amount > 150) {
-                    JOptionPane.showMessageDialog(null,"Error. Please enter a reasonable value between 0 and 150");
+                } else if ((words[0].equals("forward") || words[0].equals("backward"))&& amount > 300) {
+                    JOptionPane.showMessageDialog(null, "Error. Please enter a reasonable value between 0 and 300");
+                } else if (amount > 360) {
+                    JOptionPane.showMessageDialog(null, "Error. Please enter a reasonable value between 0 and 360");
                 } else {
                     switch (words[0]) {
                         case "turnleft":
@@ -261,7 +264,7 @@ public class TurtleGraphics extends OOPGraphics{
                             saved = false;
                             break;
                         default:
-                            System.out.println("Invalid command");
+                            JOptionPane.showMessageDialog(null,"Invalid command");
                     }
                 }
             }catch (NumberFormatException e){
@@ -292,6 +295,7 @@ public class TurtleGraphics extends OOPGraphics{
                         commandsList.add(command);
                         System.out.println(command);
                         saved = false;
+                        break;
                     case "triangle":
                         if (num1 + num2 <= num3 || num1 + num3 <= num2 || num2 + num3 <= num1) {
                             JOptionPane.showMessageDialog(null,"The lengths given do not form a valid triangle");
@@ -300,6 +304,7 @@ public class TurtleGraphics extends OOPGraphics{
                             commandsList.add(command);
                             System.out.println(command);
                             saved = false;
+                            break;
                         }
                 }
             }
