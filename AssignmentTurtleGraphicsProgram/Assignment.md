@@ -155,7 +155,7 @@ All of the following should be implemented as methods in your code but also as c
 that contains your name.
 about
    (4 marks)
--[ ] Make a square command that takes a parameter for the length and draws a square. The turtle
+-[x] Make a square command that takes a parameter for the length and draws a square. The turtle
 should remain in the original position after this command has been issued.
 square <length>
 (2 marks)

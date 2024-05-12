@@ -214,8 +214,8 @@ public class TurtleGraphics extends OOPGraphics{
 
                 if (amount < 0){
                     JOptionPane.showMessageDialog(null,"Error. Please enter a positive number");
-                } else if (amount > 200) {
-                    JOptionPane.showMessageDialog(null,"Error. Please enter a reasonable value between 0 and 200");
+                } else if (amount > 150) {
+                    JOptionPane.showMessageDialog(null,"Error. Please enter a reasonable value between 0 and 150");
                 } else {
                     switch (words[0]) {
                         case "turnleft":
