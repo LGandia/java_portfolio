@@ -144,6 +144,7 @@ public class TurtleGraphics extends OOPGraphics{
                     }
                     break;
                 case "reset":
+                    setPenColour(Color.red);
                     reset();
                     penDown();
                     commandsList.add(command);
