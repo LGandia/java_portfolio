@@ -16,6 +16,11 @@ public class TurtleGraphics extends OOPGraphics{
     private static String loadedName;
     private static final ArrayList<String> commandsList = new ArrayList<>();
 
+    public static void main(String[] args)
+    {
+        new MainClass();
+    }
+
     public TurtleGraphics() {
         JFrame Screen = new JFrame();
         Screen.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
