@@ -295,11 +295,6 @@ public class TurtleGraphics extends OOPGraphics{
         int x2 = getxPos() + len;
         int y2 = getyPos() + len;
 
-        int x3 = x2 + len;
-        System.out.println(x3);
-        int y3 = y2 + len;
-        System.out.println(y3);
-
         drawLine(getPenColour(),x1,y1,x1,y2);
         drawLine(getPenColour(),x1,y1,x2,y1);
         drawLine(getPenColour(),x2,y1,x2,y2);
