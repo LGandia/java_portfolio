@@ -202,7 +202,7 @@ public class TurtleGraphics extends OOPGraphics{
                     saved = false;
                     break;
 
-                case "turnleft", "turnright", "forward", "backward","square":
+                case "turnleft", "turnright", "forward", "backward","square","triangle":
                     JOptionPane.showMessageDialog(null,"Error. Please enter a parameter");
                     break;
 
