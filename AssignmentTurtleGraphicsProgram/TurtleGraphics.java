@@ -200,7 +200,7 @@ public class TurtleGraphics extends OOPGraphics{
                     saved = false;
                     break;
 
-                case "turnleft", "turnright", "forward", "backward":
+                case "turnleft", "turnright", "forward", "backward","square":
                     JOptionPane.showMessageDialog(null,"Error. Please enter a parameter");
                     break;
 
@@ -209,8 +209,6 @@ public class TurtleGraphics extends OOPGraphics{
             }
         }else if (countWords == 2){
             String[] words = command.split("\\s");
-            System.out.println(Arrays.toString(words));
-
             try {
                 int amount = Integer.parseInt(words[1]);
 
@@ -240,6 +238,12 @@ public class TurtleGraphics extends OOPGraphics{
                             break;
                         case "backward":
                             forward(-amount);
+                            commandsList.add(command);
+                            System.out.println(command);
+                            saved = false;
+                            break;
+                        case "square":
+                            square(amount);
                             commandsList.add(command);
                             System.out.println(command);
                             saved = false;
@@ -284,7 +288,14 @@ public class TurtleGraphics extends OOPGraphics{
         showAbout = true;
         repaint();
     }
-    private void square(int lenght){
-        drawLine();
+    private void square(int len){
+        System.out.println(getPenColour());
+        int x1 = getxPos();
+        int y1 = getyPos();
+        System.out.println(x1+","+y1);
+        int x2 = getxPos() - len;
+        int y2 = getyPos() - len;
+        System.out.println(x2+","+y2);
+        drawLine(getPenColour(), getxPos(),getyPos(),x2,y2);
     }
 }
