@@ -159,7 +159,7 @@ about
 should remain in the original position after this command has been issued.
 square <length>
 (2 marks)
--[ ] A pencolour Command that takes three parameters, one for red, one for green and one
+-[x] A pencolour Command that takes three parameters, one for red, one for green and one
 for blue to make an RGB colour.
 pencolour <red>,<green>,<blue>
 (5 marks)
