@@ -11,18 +11,13 @@ import uk.ac.leedsbeckett.oop.OOPGraphics;
 
 public class TurtleGraphics extends OOPGraphics{
 
-    public static boolean saved = false;
-    public static boolean loaded = false;
-    public static String loadedName;
-    public static ArrayList<String> commandsList = new ArrayList<>();
-    private final JFrame Screen;
+    private static boolean saved = false;
+    private static boolean loaded = false;
+    private static String loadedName;
+    private static final ArrayList<String> commandsList = new ArrayList<>();
 
-    public static void main(String[] args)
-    {
-        new TurtleGraphics();
-    }
     public TurtleGraphics() {
-        Screen = new JFrame();
+        JFrame Screen = new JFrame();
         Screen.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         Screen.setLayout(new FlowLayout());
         Screen.add(this);
