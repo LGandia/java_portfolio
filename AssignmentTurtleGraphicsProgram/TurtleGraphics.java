@@ -54,23 +54,6 @@ public class TurtleGraphics extends OOPGraphics{
             }
         });
     }
-    private boolean showAbout = false;
-
-    @Override
-    public void paintComponent(Graphics g) {
-        super.paintComponent(g);
-        if (showAbout) {
-            g.setColor(Color.WHITE);
-            g.setFont(new Font("Arial", Font.BOLD, 40));
-            g.drawString("Laura Gandia", 150, 325);
-        }
-    }
-    @Override
-    public void about() {
-        super.about();
-        showAbout = true;
-        repaint();
-    }
 
     public void processCommand(String command) {
 
@@ -285,5 +268,23 @@ public class TurtleGraphics extends OOPGraphics{
         JOptionPane.showMessageDialog(null,"Image and commands saved successfully.");
         saved = true;
     }
-
+    private boolean showAbout = false;
+    @Override
+    public void paintComponent(Graphics g) {
+        super.paintComponent(g);
+        if (showAbout) {
+            g.setColor(Color.WHITE);
+            g.setFont(new Font("Arial", Font.BOLD, 40));
+            g.drawString("Laura Gandia", 150, 325);
+        }
+    }
+    @Override
+    public void about() {
+        super.about();
+        showAbout = true;
+        repaint();
+    }
+    private void square(int lenght){
+        drawLine();
+    }
 }
