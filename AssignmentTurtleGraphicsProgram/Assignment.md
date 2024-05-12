@@ -163,7 +163,7 @@ square <length>
 for blue to make an RGB colour.
 pencolour <red>,<green>,<blue>
 (5 marks)
--[ ] A penwidth command that takes a width for the pen so that all further drawing operations
+-[x] A penwidth command that takes a width for the pen so that all further drawing operations
 are of the new width.
 penwidth <width>
 (2 marks)

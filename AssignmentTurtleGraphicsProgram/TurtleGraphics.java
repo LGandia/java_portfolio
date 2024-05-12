@@ -248,6 +248,12 @@ public class TurtleGraphics extends OOPGraphics{
                             System.out.println(command);
                             saved = false;
                             break;
+                        case "penwidth":
+                            penwidth(amount);
+                            commandsList.add(command);
+                            System.out.println(command);
+                            saved = false;
+                            break;
                         default:
                             System.out.println("Invalid command");
                     }
@@ -328,5 +334,14 @@ public class TurtleGraphics extends OOPGraphics{
     }
     private void pencolour(int r, int g,int b){
         setPenColour(new Color(r,g,b));
+    }
+    private void penwidth(int width){
+        if (width >= 20){
+            JOptionPane.showMessageDialog(null,"Please enter a number less than 20");
+        } else if (width == 0) {
+            JOptionPane.showMessageDialog(null,"Please enter a number greater than 0");
+        }else {
+        setStroke(width);
+        }
     }
 }
