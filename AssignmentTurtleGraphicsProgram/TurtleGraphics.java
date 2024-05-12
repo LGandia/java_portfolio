@@ -249,6 +249,12 @@ public class TurtleGraphics extends OOPGraphics{
                             System.out.println(command);
                             saved = false;
                             break;
+                        case "triangle":
+                            triangle(amount);
+                            commandsList.add(command);
+                            System.out.println(command);
+                            saved = false;
+                            break;
                         case "penwidth":
                             penwidth(amount);
                             commandsList.add(command);
@@ -333,6 +339,21 @@ public class TurtleGraphics extends OOPGraphics{
         drawLine(getPenColour(),x2,y2,x1,y2);
         repaint();
     }
+    private void triangle(int len){
+        int x1 = getxPos();
+        int y1 = getyPos();
+
+        int x2 = getxPos() + len;
+
+        int x3 = x1 + len/2;
+        int y3 = y1 + (int)Math.round(Math.sqrt(3) / 2 * len);
+
+        drawLine(getPenColour(),x1,y1,x2, y1);
+        drawLine(getPenColour(),x2, y1,x3,y3);
+        drawLine(getPenColour(),x3,y3,x1,y1);
+
+        repaint();
+    }
     private void pencolour(int r, int g,int b){
         setPenColour(new Color(r,g,b));
     }
@@ -342,7 +363,7 @@ public class TurtleGraphics extends OOPGraphics{
         } else if (width == 0) {
             JOptionPane.showMessageDialog(null,"Please enter a number greater than 0");
         }else {
-        setStroke(width);
+            setStroke(width);
         }
     }
 }

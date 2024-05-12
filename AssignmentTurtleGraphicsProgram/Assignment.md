@@ -167,7 +167,7 @@ pencolour <red>,<green>,<blue>
 are of the new width.
 penwidth <width>
 (2 marks)
--[ ] A triangle command that draws equilateral triangles with one parameter.
+-[x] A triangle command that draws equilateral triangles with one parameter.
 triangle <size>
 (3 marks)
 -[ ] A further triangle command which specified three sides that draws any triangle (hint –
