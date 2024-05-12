@@ -170,7 +170,7 @@ penwidth <width>
 -[x] A triangle command that draws equilateral triangles with one parameter.
 triangle <size>
 (3 marks)
--[ ] A further triangle command which specified three sides that draws any triangle (hint –
+-[x] A further triangle command which specified three sides that draws any triangle (hint –
 look at polygons).
 triangle <side1>,<side2>,<side3>
 (4 marks)

@@ -4,7 +4,6 @@ import java.awt.event.WindowEvent;
 import java.awt.image.BufferedImage;
 import java.io.*;
 import java.util.ArrayList;
-import java.util.Objects;
 import javax.imageio.ImageIO;
 import javax.swing.*;
 
@@ -270,27 +269,34 @@ public class TurtleGraphics extends OOPGraphics{
             }
         } else if (countWords == 4) {
             boolean validValues = false;
-            if (Objects.equals(words[0], "pencolour")){
-                for (int i = 1; i < words.length; i++) {
-                    int colNum = Integer.parseInt(words[i]);
-                    if (colNum < 0) {
-                        JOptionPane.showMessageDialog(null, "Error. Please enter a positive values");
-                        break;
-                    }else if (colNum > 256) {
-                        JOptionPane.showMessageDialog(null, "Error. Please enter a reasonable value between 0 and 256");
-                        break;
-                    }else{
-                        validValues = true;
-                    }
-                }if(validValues) {
-                    int red = Integer.parseInt(words[1]);
-                    int green = Integer.parseInt(words[2]);
-                    int blue = Integer.parseInt(words[3]);
+            for (int i = 1; i < words.length; i++) {
+                int colNum = Integer.parseInt(words[i]);
+                if (colNum < 0) {
+                    JOptionPane.showMessageDialog(null, "Error. Please enter a positive values");
+                    break;
+                } else if (colNum > 256) {
+                    JOptionPane.showMessageDialog(null, "Error. Please enter a reasonable value between 0 and 256");
+                    break;
+                } else {
+                    validValues = true;
+                }
+            }
+            if (validValues) {
+                int num1 = Integer.parseInt(words[1]);
+                int num2 = Integer.parseInt(words[2]);
+                int num3 = Integer.parseInt(words[3]);
 
-                    pencolour(red,green,blue);
-                    commandsList.add(command);
-                    System.out.println(command);
-                    saved = false;
+                switch (words[0]){
+                    case "pencolour":
+                        pencolour(num1, num2, num3);
+                        commandsList.add(command);
+                        System.out.println(command);
+                        saved = false;
+                    case "triangle":
+                        triangle(num1, num2, num3);
+                        commandsList.add(command);
+                        System.out.println(command);
+                        saved = false;
                 }
             }
         } else{
@@ -340,19 +346,33 @@ public class TurtleGraphics extends OOPGraphics{
         repaint();
     }
     private void triangle(int len){
-        int x1 = getxPos();
-        int y1 = getyPos();
-
+        int x1 = getxPos(), y1 = getyPos();
         int x2 = getxPos() + len;
 
         int x3 = x1 + len/2;
         int y3 = y1 + (int)Math.round(Math.sqrt(3) / 2 * len);
 
-        drawLine(getPenColour(),x1,y1,x2, y1);
-        drawLine(getPenColour(),x2, y1,x3,y3);
+        drawLine(getPenColour(),x1,y1,x2,y1);
+        drawLine(getPenColour(),x2,y1,x3,y3);
         drawLine(getPenColour(),x3,y3,x1,y1);
 
         repaint();
+    }
+    private void triangle(int len1, int len2, int len3){
+        if (len1 + len2 <= len3 || len1 + len3 <= len2 || len2 + len3 <= len1) {
+            JOptionPane.showMessageDialog(null,"The lengths given do not form a valid triangle");
+        }else {
+            int x1 = getxPos(), y1 = getyPos();
+            int x2 = getxPos() + len1;
+
+            int x3 = (int) (x1 + len2 * Math.cos(Math.toRadians(60)));
+            int y3 = (int) (y1 + len2 * Math.sin(Math.toRadians(60)));
+
+            drawLine(getPenColour(),x1,y1,x2, y1);
+            drawLine(getPenColour(),x2, y1,x3,y3);
+            drawLine(getPenColour(),x3,y3,x1,y1);
+            repaint();
+        }
     }
     private void pencolour(int r, int g,int b){
         setPenColour(new Color(r,g,b));
