@@ -16,11 +16,6 @@ public class TurtleGraphics extends OOPGraphics{
     private static String loadedName;
     private static final ArrayList<String> commandsList = new ArrayList<>();
 
-    public static void main(String[] args)
-    {
-        new TurtleGraphics();
-    }
-
     public TurtleGraphics() {
         JFrame Screen = new JFrame();
         Screen.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -153,6 +148,7 @@ public class TurtleGraphics extends OOPGraphics{
                         int response = JOptionPane.showConfirmDialog(null, "You have not saved your image. " +
                                 "Do you wish to reset without saving?", "Confirm", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
                         if (response == JOptionPane.YES_OPTION){
+                            System.out.println("load");
                             commandsList.clear();
                             showAbout = false;
                             setPenColour(Color.red);
@@ -204,7 +200,7 @@ public class TurtleGraphics extends OOPGraphics{
                     System.out.println(command);
                     break;
 
-                case "turnleft", "turnright", "forward", "backward","square","triangle":
+                case "turnleft", "turnright", "forward", "backward","square","triangle","pencolour":
                     JOptionPane.showMessageDialog(null,"Error. Please enter a parameter");
                     break;
 
@@ -386,7 +382,7 @@ public class TurtleGraphics extends OOPGraphics{
         setPenColour(new Color(r,g,b));
     }
     private void penwidth(int width){
-        if (width >= 20){
+        if (width > 20){
             JOptionPane.showMessageDialog(null,"Please enter a number less than 20");
         } else if (width == 0) {
             JOptionPane.showMessageDialog(null,"Please enter a number greater than 0");
