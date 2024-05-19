@@ -1,0 +1,20 @@
+reset
+red
+forward 10
+triangle 16
+square 100
+forward 50
+penwidth 70
+penwidth 19
+turnright 200
+triangle 200
+forward 300
+turnleft 200
+forward 250
+blue
+triangle 150
+green
+triangle 125
+turnright 50
+forward 55
+square 57
